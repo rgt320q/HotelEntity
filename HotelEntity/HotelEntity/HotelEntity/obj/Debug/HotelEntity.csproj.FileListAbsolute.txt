@@ -13,3 +13,18 @@ C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\Hot
 C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.csprojAssemblyReference.cache
 C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.csproj.CoreCompileInputs.cache
 C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.csproj.CopyComplete
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\bin\Debug\HotelEntity.dll.config
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\bin\Debug\HotelEntity.dll
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\bin\Debug\HotelEntity.pdb
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\bin\Debug\EntityFramework.dll
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\bin\Debug\EntityFramework.xml
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.csprojAssemblyReference.cache
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.Migrations.Installation.resources
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.Migrations.AddedForeignKey.resources
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.csproj.GenerateResource.cache
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.csproj.CoreCompileInputs.cache
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.csproj.CopyComplete
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.dll
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.pdb

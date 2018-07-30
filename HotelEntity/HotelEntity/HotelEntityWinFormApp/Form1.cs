@@ -39,19 +39,19 @@ namespace HotelEntityWinFormApp
 
         public void RenewGridviews()
         {
-            var model = db.BookingInformation
-                 .Include(i => i.GuestInformation)
-                 .Include(i => i.Payments)
-                 .Select(i => new
-                 {
-                     i.BookingId,
-                     i.Arrivaldate,
-                     i.DepartureDate,
-                     i.RoomNo,
-                     i.AllPersonTotal,
-                     i.GuestInformation,
-                     i.Payments
-                 });
+            //var model = db.BookingInformation
+            //     .Include(i => i.GuestInformation)
+            //     .Include(i => i.Payments)
+            //     .Select(i => new
+            //     {
+            //         i.BookingId,
+            //         i.Arrivaldate,
+            //         i.DepartureDate,
+            //         i.RoomNo,
+            //         i.AllPersonTotal,
+            //         i.GuestInformation,
+            //         i.Payments
+            //     });
 
             //foreach (var bookings in model)
             //{
@@ -66,22 +66,22 @@ namespace HotelEntityWinFormApp
             //    }
             //}
 
-            
 
-            foreach (var item in model)
-            {
-                
 
-                foreach (var guest in item.GuestInformation)
-                {
-                    rtbx1.Text = guest.GuestName;
-                }
-            }
-            
-            
-            //dgwBooking.DataSource = db.BookingInformation.ToList();
-            //dgwGuest.DataSource = db.GuestInformation.ToList();
-            //dgwPayment.DataSource = db.Payments.ToList();
+            //foreach (var item in model)
+            //{
+
+
+            //    foreach (var guest in item.GuestInformation)
+            //    {
+            //        rtbx1.Text = guest.GuestName;
+            //    }
+            //}
+
+
+            dgwBooking.DataSource = db.BookingInformation.ToList();
+            dgwGuest.DataSource = db.GuestInformation.ToList();
+            dgwPayment.DataSource = db.Payments.ToList();
         }
 
         private void Form1_Load(object sender, EventArgs e)
