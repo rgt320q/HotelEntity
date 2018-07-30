@@ -1,0 +1,15 @@
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\bin\Debug\HotelEntity.dll.config
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\bin\Debug\HotelEntity.dll
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\bin\Debug\HotelEntity.pdb
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\bin\Debug\EntityFramework.dll
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\bin\Debug\EntityFramework.xml
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.dll
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.pdb
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.Migrations.Installation.resources
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.csproj.GenerateResource.Cache
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.Migrations.AddedForeignKey.resources
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.csprojAssemblyReference.cache
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.csproj.CoreCompileInputs.cache
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.csproj.CopyComplete

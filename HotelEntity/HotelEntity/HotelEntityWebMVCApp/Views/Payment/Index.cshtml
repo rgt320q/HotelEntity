@@ -1,0 +1,153 @@
+﻿@model IEnumerable<HotelEntity.Entites.Payments>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingInformation.RoomNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DailyPersonPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DailyGuestFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Extrasprice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChildFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BreakfastPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LunchPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DinnerPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChildFeeTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalAccommodationFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalRoomFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalBreakFastFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalLunchFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalDinnerFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Totaldayspersonfee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InsertDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateDateTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookingId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookingInformation.RoomNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DailyPersonPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DailyGuestFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Extrasprice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscountPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChildFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BreakfastPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LunchPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DinnerPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChildFeeTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalAccommodationFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalRoomFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalBreakFastFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalLunchFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalDinnerFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Totaldayspersonfee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InsertDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateDateTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BookingId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BookingId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BookingId })
+        </td>
+    </tr>
+}
+
+</table>

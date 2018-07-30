@@ -1,0 +1,12 @@
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\HotelEntity.Business.dll
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\HotelEntity.Business.pdb
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\HotelEntity.dll
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\EntityFramework.dll
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\HotelEntity.pdb
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\HotelEntity.dll.config
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\EntityFramework.xml
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.csprojAssemblyReference.cache
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.csproj.CoreCompileInputs.cache
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.csproj.CopyComplete
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.dll
+C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.pdb

@@ -1,0 +1,98 @@
+﻿
+@model IEnumerable<HotelEntity.Entites.BookingInformation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Hotel Manager Index</h2>
+
+@*@foreach (var mdl in Model)
+{   
+
+    foreach (var guests1 in mdl.GuestInformation)
+    {
+        <div class="row mb-1">
+
+            <div class="bg-info mb-1 text-white p-2 mt-3 text-center">
+                <strong>Ad: </strong>@guests1.GuestName <strong>Soyad: </strong>@guests1.GuestSurName
+                
+                @foreach (var payments in mdl.Payments)
+                {
+                    <div class="row mb-1">
+
+                        <div class="bg-info mb-1 text-white p-2 mt-3 text-center">
+                            <strong>Fiyat: </strong>@payments.TotalPrice
+                        </div>
+
+                    </div>
+                }
+            </div>
+            <div class="bg-primary mb-1 text-white p-2 mt-3 text-center">
+                <strong>Oda Numarası: </strong>@mdl.RoomNo
+            </div>
+            <div class="bg-secondary mb-1 text-white p-2 mt-3 text-center">
+                <strong>Geliş Tarihi: </strong>@mdl.Arrivaldate.ToString("dd-MM-yyyy") <strong>Çıkış Tarihi: </strong>@mdl.DepartureDate.ToString("dd-MM-yyyy") <strong>Gün Sayısı: </strong>@mdl.SumDays
+            </div>
+        </div>
+    }
+}*@
+
+@*<table class="table table-borderless table-hover">
+    <tr>
+        <th>
+            Booking Id
+        </th>
+        <th>
+            Guest Name
+        </th>
+        <th>
+            Guest SureName
+        </th>
+        <th>
+            Arrival Date
+        </th>
+        <th>
+            Departure Date
+        </th>
+        <th>
+            Room No
+        <th>
+            Person Total
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingId)
+            </td>
+            @foreach (var guests in item.GuestInformation)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => guests.GuestName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => guests.GuestSurName)
+                </td>
+            }
+            <td>
+                @Html.DisplayFor(modelItem => item.Arrivaldate.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureDate.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AllPersonTotal)
+            </td>
+
+        </tr>
+    }
+
+</table>*@
+
+
