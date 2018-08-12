@@ -20,21 +20,35 @@ namespace HotelEntityWebMVCApp.Controllers
         //GET: BookingInformation
         public ActionResult Index()
         {
-            //var model = db.BookingInformation
-            //       .Include(i => i.GuestInformation)
-            //       .Include(i => i.Payments)
-            //       .Select(i => new
-            //       {
-            //           i.BookingId,
-            //           i.Arrivaldate,
-            //           i.DepartureDate,
-            //           i.RoomNo,
-            //           i.AllPersonTotal,
-            //           i.GuestInformation,
-            //           i.Payments
-            //       });
+            var model = db.BookingInformation
+                  .Include(i => i.GuestInformation)
+                  .Include(i => i.Payments).ToList();
 
-            return View(db.BookingInformation.ToList());
+            //var model = from b in db.BookingInformation
+            //                 join g in db.GuestInformation
+            //                 on b.BookingId equals g.BookingId
+            //                 join p in db.Payments
+            //                 on b.BookingId equals p.BookingId
+            //                 select new
+            //                 {
+            //                     b.BookingId,
+            //                     b.Arrivaldate,
+            //                     b.DepartureDate,
+            //                     g.GuestName,
+            //                     g.GuestSurName,
+            //                     g.GuestPhone,
+            //                     g.GuestEmail,
+            //                     b.RoomNo,
+            //                     b.Status,
+            //                     b.SumDays,
+            //                     p.DailyPersonPrice,
+            //                     p.Extrasprice,
+            //                     p.DiscountPrice,
+            //                     p.TotalPrice
+            //                 };
+            
+
+            return View(model);
         }
 
 
@@ -56,7 +70,8 @@ namespace HotelEntityWebMVCApp.Controllers
         // GET: BookingInformation/Create
         public ActionResult Create()
         {
-            return View();
+            var model = Tuple.Create<BookingInformation, GuestInformation, Payments>(new BookingInformation(), new GuestInformation(), new Payments());
+            return View(model);
         }
 
         // POST: BookingInformation/Create
@@ -64,16 +79,28 @@ namespace HotelEntityWebMVCApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BookingId,Arrivaldate,DepartureDate,RoomNo,Status,SumDays,ChildTotal,ChildWithFeeTotal,PersonQuantity,AllPersonTotal,AccommodationType,BoardType,Breakfast,Lunch,Dinner,InsertDateTime,UpdateDateTime")] BookingInformation bookingInformation)
+        public ActionResult Create([Bind(Prefix ="Item1")]BookingInformation Model1, [Bind(Prefix ="Item2")]GuestInformation Model2, [Bind(Prefix ="Item3")]Payments Model3)
         {
             if (ModelState.IsValid)
             {
-                db.BookingInformation.Add(bookingInformation);
+                Model1.Arrivaldate = DateTime.Now;
+                Model1.DepartureDate = DateTime.Now.AddDays(1);
+                Model1.SumDays = 1;
+                Model1.InsertDateTime = DateTime.Now;
+                Model1.UpdateDateTime = DateTime.Now;
+                Model2.InsertDateTime = DateTime.Now;
+                Model2.UpdateDateTime = DateTime.Now;
+                Model3.InsertDateTime = DateTime.Now;
+                Model3.InsertDateTime = DateTime.Now;
+
+                db.BookingInformation.Add(Model1);
+                db.GuestInformation.Add(Model2);
+                db.Payments.Add(Model3);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(bookingInformation);
+            return View("Index");
         }
 
         // GET: BookingInformation/Edit/5

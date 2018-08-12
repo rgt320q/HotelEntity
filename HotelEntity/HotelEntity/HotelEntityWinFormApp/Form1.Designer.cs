@@ -28,12 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgwGuest = new System.Windows.Forms.DataGridView();
-            this.GuestInformation = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgwBooking = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgwPayment = new System.Windows.Forms.DataGridView();
             this.gbxPaymentsInfo = new System.Windows.Forms.GroupBox();
             this.tbChildeFee = new System.Windows.Forms.TextBox();
             this.lChildeFee = new System.Windows.Forms.Label();
@@ -148,13 +144,8 @@
             this.bRoom107 = new System.Windows.Forms.Button();
             this.bRoom106 = new System.Windows.Forms.Button();
             this.bRoom105 = new System.Windows.Forms.Button();
-            this.rtbx1 = new System.Windows.Forms.RichTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgwGuest)).BeginInit();
-            this.GuestInformation.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwBooking)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgwPayment)).BeginInit();
             this.gbxPaymentsInfo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbMisafirBilgileri.SuspendLayout();
@@ -165,32 +156,12 @@
             this.gbOdaBilgileri.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgwGuest
-            // 
-            this.dgwGuest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwGuest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgwGuest.Location = new System.Drawing.Point(3, 16);
-            this.dgwGuest.Name = "dgwGuest";
-            this.dgwGuest.Size = new System.Drawing.Size(345, 266);
-            this.dgwGuest.TabIndex = 0;
-            // 
-            // GuestInformation
-            // 
-            this.GuestInformation.Controls.Add(this.dgwGuest);
-            this.GuestInformation.Location = new System.Drawing.Point(362, 445);
-            this.GuestInformation.Name = "GuestInformation";
-            this.GuestInformation.Size = new System.Drawing.Size(351, 285);
-            this.GuestInformation.TabIndex = 1;
-            this.GuestInformation.TabStop = false;
-            this.GuestInformation.Text = "GuestInformation";
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.rtbx1);
             this.groupBox2.Controls.Add(this.dgwBooking);
-            this.groupBox2.Location = new System.Drawing.Point(12, 445);
+            this.groupBox2.Location = new System.Drawing.Point(12, 406);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(344, 285);
+            this.groupBox2.Size = new System.Drawing.Size(935, 321);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Booking";
@@ -201,28 +172,9 @@
             this.dgwBooking.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgwBooking.Location = new System.Drawing.Point(3, 16);
             this.dgwBooking.Name = "dgwBooking";
-            this.dgwBooking.Size = new System.Drawing.Size(338, 266);
+            this.dgwBooking.Size = new System.Drawing.Size(929, 302);
             this.dgwBooking.TabIndex = 0;
             this.dgwBooking.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwBooking_CellDoubleClick);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dgwPayment);
-            this.groupBox3.Location = new System.Drawing.Point(719, 445);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(228, 285);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Payment";
-            // 
-            // dgwPayment
-            // 
-            this.dgwPayment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwPayment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgwPayment.Location = new System.Drawing.Point(3, 16);
-            this.dgwPayment.Name = "dgwPayment";
-            this.dgwPayment.Size = new System.Drawing.Size(222, 266);
-            this.dgwPayment.TabIndex = 0;
             // 
             // gbxPaymentsInfo
             // 
@@ -1621,14 +1573,6 @@
             this.bRoom105.UseCompatibleTextRendering = true;
             this.bRoom105.UseVisualStyleBackColor = false;
             // 
-            // rtbx1
-            // 
-            this.rtbx1.Location = new System.Drawing.Point(6, 134);
-            this.rtbx1.Name = "rtbx1";
-            this.rtbx1.Size = new System.Drawing.Size(332, 145);
-            this.rtbx1.TabIndex = 100018;
-            this.rtbx1.Text = "";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1644,18 +1588,12 @@
             this.Controls.Add(this.bRezervationAdd);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbMisafirBilgileri);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.GuestInformation);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgwGuest)).EndInit();
-            this.GuestInformation.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgwBooking)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgwPayment)).EndInit();
             this.gbxPaymentsInfo.ResumeLayout(false);
             this.gbxPaymentsInfo.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1672,9 +1610,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox GuestInformation;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.GroupBox gbxPaymentsInfo;
         public System.Windows.Forms.TextBox tbChildeFee;
         public System.Windows.Forms.Label lChildeFee;
@@ -1772,9 +1708,7 @@
         public System.Windows.Forms.Label lCikisTarihi;
         public System.Windows.Forms.Label lGirisTarihi;
         public System.Windows.Forms.Label lOdaNo;
-        public System.Windows.Forms.DataGridView dgwGuest;
         public System.Windows.Forms.DataGridView dgwBooking;
-        public System.Windows.Forms.DataGridView dgwPayment;
         public System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button bRoom201;
         private System.Windows.Forms.Button bRoom208;
@@ -1792,7 +1726,6 @@
         private System.Windows.Forms.Button bRoom106;
         private System.Windows.Forms.Button bRoom105;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RichTextBox rtbx1;
     }
 }
 

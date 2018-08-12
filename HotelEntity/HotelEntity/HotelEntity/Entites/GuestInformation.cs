@@ -18,12 +18,12 @@ namespace HotelEntity.Entites
         [Required]
         public string GuestSurName { get; set; }        
         public string GuestPhone { get; set; }
-        [MaxLength(11)]
+        //[MaxLength(11)]
         public string GuestIdentNumber { get; set; }
         public string GuestCity { get; set; }
         public string GuestGender { get; set; }
         public string GuestEmail { get; set; }
-        public DateTime GuestBirthDay { get; set; }
+        public DateTime? GuestBirthDay { get; set; }
         public string GuestAddress { get; set; }
         public string GuestFatherName { get; set; }
         public string GuestMotherName { get; set; }
@@ -34,9 +34,9 @@ namespace HotelEntity.Entites
         public string GuestDistrict { get; set; }
         public string GuestCarPlate { get; set; }
         public string GuestRezervationNote { get; set; }
-        public int GuestsequenceNo { get; set; }
-        public DateTime InsertDateTime { get; set; }
-        public DateTime UpdateDateTime { get; set; }
+        public int? GuestsequenceNo { get; set; }
+        public DateTime? InsertDateTime { get; set; }
+        public DateTime? UpdateDateTime { get; set; }
 
         public int BookingId { get; set; }
         public virtual BookingInformation BookingInformation { get; set; }

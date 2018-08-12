@@ -28,3 +28,4 @@ C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\ob
 C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.csproj.CopyComplete
 C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.dll
 C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.pdb
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity\obj\Debug\HotelEntity.Migrations.tablesedit33.resources

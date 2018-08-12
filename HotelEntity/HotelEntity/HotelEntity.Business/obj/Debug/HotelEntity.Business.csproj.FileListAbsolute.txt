@@ -10,3 +10,15 @@ C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\Hot
 C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.csproj.CopyComplete
 C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.dll
 C:\Users\cetin\Documents\Visual Studio 2015\Projects\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.pdb
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\HotelEntity.Business.dll
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\HotelEntity.Business.pdb
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\HotelEntity.dll
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\EntityFramework.dll
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\HotelEntity.pdb
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\HotelEntity.dll.config
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\EntityFramework.xml
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.csprojAssemblyReference.cache
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.csproj.CoreCompileInputs.cache
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.csproj.CopyComplete
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.dll
+C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.pdb
