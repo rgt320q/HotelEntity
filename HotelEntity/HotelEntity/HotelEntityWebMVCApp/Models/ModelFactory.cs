@@ -16,8 +16,8 @@ namespace HotelEntityWebMVCApp.Models
                 Arrivaldate = BookingInformation.Arrivaldate,
                 DepartureDate = BookingInformation.DepartureDate,
                 RoomNo = BookingInformation.RoomNo,
-                SumDays = BookingInformation.SumDays,
-                AllPersonTotal = BookingInformation.AllPersonTotal,   
+                //SumDays = BookingInformation.SumDays,
+                //AllPersonTotal = BookingInformation.AllPersonTotal,   
                 GuestInformation=BookingInformation.GuestInformation.Select(g => Create(g)),
                 Payments=BookingInformation.Payments.Select(p => Create(p))
             };
@@ -31,7 +31,7 @@ namespace HotelEntityWebMVCApp.Models
                 GuestName=guestInformation.GuestName,
                 GuestSurName=guestInformation.GuestSurName,
                 GuestPhone=guestInformation.GuestPhone,
-                GuestsequenceNo=guestInformation.GuestsequenceNo
+                //GuestsequenceNo=guestInformation.GuestsequenceNo
             };
         }
 
@@ -40,10 +40,10 @@ namespace HotelEntityWebMVCApp.Models
             return new PaymentsModel()
             {
                 PaymentId=payments.PaymentId,
-                DailyGuestFee=payments.DailyGuestFee,
-                Extrasprice=payments.Extrasprice,
-                DiscountPrice=payments.DiscountPrice,
-                TotalPrice=payments.TotalPrice
+                //DailyGuestFee=payments.DailyGuestFee,
+                //Extrasprice=payments.Extrasprice,
+                //DiscountPrice=payments.DiscountPrice,
+                //TotalPrice=payments.TotalPrice
             };
         }
     }

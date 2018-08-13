@@ -18,21 +18,23 @@ namespace HotelEntityWebMVCApp.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var model = _context.BookingInformation
-                .Include(i => i.GuestInformation)
-                .Include(i=>i.Payments)
-                .Select(i=> new
-                {
-                    i.BookingId,
-                    i.Arrivaldate,
-                    i.DepartureDate,
-                    i.RoomNo,
-                    i.AllPersonTotal,
-                    i.GuestInformation,
-                    i.Payments
-                });
+            //var model = _context.BookingInformation
+            //    .Include(i => i.GuestInformation)
+            //    .Include(i=>i.Payments)
+            //    .Select(i=> new
+            //    {
+            //        i.BookingId,
+            //        i.Arrivaldate,
+            //        i.DepartureDate,
+            //        i.RoomNo,
+            //        i.AllPersonTotal,
+            //        i.GuestInformation,
+            //        i.Payments
+            //    });
 
-            return View(model);
+            //var model = _context.BookingInformation.Include(i => i.GuestInformation).Include(i => i.Payments).ToList();
+
+            return View(_context.BookingInformation.ToList());
 
         }
     }

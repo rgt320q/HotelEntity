@@ -61,6 +61,10 @@
     <Compile Include="Migrations\201807040958551_AddedForeignKey.Designer.cs">
       <DependentUpon>201807040958551_AddedForeignKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808121507045_tablesedit33.cs" />
+    <Compile Include="Migrations\201808121507045_tablesedit33.Designer.cs">
+      <DependentUpon>201808121507045_tablesedit33.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Interfaces\IBaseRepository.cs" />
@@ -80,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807040958551_AddedForeignKey.resx">
       <DependentUpon>201807040958551_AddedForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808121507045_tablesedit33.resx">
+      <DependentUpon>201808121507045_tablesedit33.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

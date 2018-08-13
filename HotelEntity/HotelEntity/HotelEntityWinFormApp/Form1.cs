@@ -39,49 +39,30 @@ namespace HotelEntityWinFormApp
 
         public void RenewGridviews()
         {
-            //var model = db.BookingInformation
-            //     .Include(i => i.GuestInformation)
-            //     .Include(i => i.Payments)
-            //     .Select(i => new
-            //     {
-            //         i.BookingId,
-            //         i.Arrivaldate,
-            //         i.DepartureDate,
-            //         i.RoomNo,
-            //         i.AllPersonTotal,
-            //         i.GuestInformation,
-            //         i.Payments
-            //     });
+            var bookingall = from b in db.BookingInformation
+                             join g in db.GuestInformation                             
+                             on b.BookingId equals g.BookingId
+                             join p in db.Payments
+                             on b.BookingId equals p.BookingId
+                             select new
+                             {
+                                 b.BookingId,
+                                 b.Arrivaldate,
+                                 b.DepartureDate,
+                                 g.GuestName,
+                                 g.GuestSurName,
+                                 g.GuestPhone,
+                                 g.GuestEmail,
+                                 b.RoomNo,
+                                 b.Status,
+                                 b.SumDays,
+                                 p.DailyPersonPrice,
+                                 p.Extrasprice,
+                                 p.DiscountPrice,
+                                 p.TotalPrice
+                             };
 
-            //foreach (var bookings in model)
-            //{
-            //    dgwBooking.DataSource = bookings;
-            //    foreach (var guests in bookings.GuestInformation)
-            //    {
-            //        dgwGuest.DataSource = guest;
-            //    }
-            //    foreach (var payments in bookings.Payments)
-            //    {
-            //        dgwPayment.DataSource = payments;
-            //    }
-            //}
-
-
-
-            //foreach (var item in model)
-            //{
-
-
-            //    foreach (var guest in item.GuestInformation)
-            //    {
-            //        rtbx1.Text = guest.GuestName;
-            //    }
-            //}
-
-
-            dgwBooking.DataSource = db.BookingInformation.ToList();
-            dgwGuest.DataSource = db.GuestInformation.ToList();
-            dgwPayment.DataSource = db.Payments.ToList();
+            dgwBooking.DataSource = bookingall.ToList();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -94,8 +75,6 @@ namespace HotelEntityWinFormApp
             cbAccommodationType.SelectedIndex = 0;
             cbBoardType.SelectedIndex = 0;
         }
-
-       
 
         //
         //Gün Sayısı Toplama
@@ -504,6 +483,7 @@ namespace HotelEntityWinFormApp
             }
             else
             {
+
                 booking.RoomNo = tbRoomNo.Text;
                 booking.Status = cbStatus.Text; ;
                 booking.Arrivaldate = dtpArrivalDate.Value;
@@ -795,9 +775,9 @@ namespace HotelEntityWinFormApp
                 dtpArrivalDate.Value = selectbooking.Arrivaldate;
                 dtpDepartureDate.Value = selectbooking.DepartureDate;
                 tbSumDay.Text = selectbooking.SumDays.ToString();
-                nudPersonQuantity.Value = selectbooking.PersonQuantity;
-                nudChildFeeQuantity.Value = selectbooking.ChildWithFeeTotal;
-                nudChildQuantity.Value = selectbooking.ChildTotal;
+                //nudPersonQuantity.Value = selectbooking.PersonQuantity;
+                //nudChildFeeQuantity.Value = selectbooking.ChildWithFeeTotal;
+                //nudChildQuantity.Value = selectbooking.ChildTotal;
                 tbTotalGuestSum.Text = selectbooking.AllPersonTotal.ToString();
                 cbAccommodationType.Text = selectbooking.AccommodationType;
                 cbBoardType.Text = selectbooking.BoardType;
@@ -825,7 +805,7 @@ namespace HotelEntityWinFormApp
                 tbDistrict1.Text = selectguest.GuestDistrict;
                 tbgiFatherName1.Text = selectguest.GuestFatherName;
                 tbgiMotherName1.Text = selectguest.GuestMotherName;
-                dtpgiBirthDay1.Value = selectguest.GuestBirthDay;
+                //dtpgiBirthDay1.Value = selectguest.GuestBirthDay;
                 tbgiIdentSerialNo1.Text = selectguest.GuestIdentSerialNo;
                 tbgiAddress1.Text = selectguest.GuestAddress;
                 tbRezervationNote.Text = selectguest.GuestRezervationNote;
@@ -835,15 +815,15 @@ namespace HotelEntityWinFormApp
 
             foreach (var selectpayment in selectpayments)
             {
-                tbRoomFee.Text = selectpayment.TotalRoomFee.ToString("C2");
-                tbDailyGuestFee.Text = selectpayment.DailyGuestFee.ToString("C2");
-                tbPersonFee.Text = selectpayment.DailyPersonPrice.ToString("C2");
-                tbChildeFee.Text = selectpayment.ChildFee.ToString("C2");
-                tbChildeFeeTotal.Text = selectpayment.ChildFeeTotal.ToString("C2");
-                tbBreakfastPrice.Text = selectpayment.BreakfastPrice.ToString("C2");
-                tbLunchPrice.Text = selectpayment.LunchPrice.ToString("C2");
-                tbDinnerPrice.Text = selectpayment.DinnerPrice.ToString("C2");
-                tbExtrasPrice.Text = selectpayment.Extrasprice.ToString();
+                //tbRoomFee.Text = selectpayment.TotalRoomFee.ToString("C2");
+                //tbDailyGuestFee.Text = selectpayment.DailyGuestFee.ToString("C2");
+                //tbPersonFee.Text = selectpayment.DailyPersonPrice.ToString("C2");
+                //tbChildeFee.Text = selectpayment.ChildFee.ToString("C2");
+                //tbChildeFeeTotal.Text = selectpayment.ChildFeeTotal.ToString("C2");
+                //tbBreakfastPrice.Text = selectpayment.BreakfastPrice.ToString("C2");
+                //tbLunchPrice.Text = selectpayment.LunchPrice.ToString("C2");
+                //tbDinnerPrice.Text = selectpayment.DinnerPrice.ToString("C2");
+                //tbExtrasPrice.Text = selectpayment.Extrasprice.ToString();
                 tbDiscountPrice.Text = selectpayment.DiscountPrice.ToString();
                 tbpTotalPrice.Text = selectpayment.TotalPrice.ToString("C2");
             }
