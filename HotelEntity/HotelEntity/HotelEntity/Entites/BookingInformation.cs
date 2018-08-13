@@ -19,7 +19,7 @@ namespace HotelEntity.Entites
         //}
 
         [Key]
-        public int BookingId { get; set; }
+        public int BookingId { get; set; }        
         public DateTime Arrivaldate { get; set; }
         public DateTime DepartureDate { get; set; }
         public string RoomNo { get; set; }

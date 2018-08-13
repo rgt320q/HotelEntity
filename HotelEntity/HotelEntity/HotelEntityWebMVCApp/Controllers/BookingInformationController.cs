@@ -22,31 +22,7 @@ namespace HotelEntityWebMVCApp.Controllers
         {
             var model = db.BookingInformation
                   .Include(i => i.GuestInformation)
-                  .Include(i => i.Payments).ToList();
-
-            //var model = from b in db.BookingInformation
-            //                 join g in db.GuestInformation
-            //                 on b.BookingId equals g.BookingId
-            //                 join p in db.Payments
-            //                 on b.BookingId equals p.BookingId
-            //                 select new
-            //                 {
-            //                     b.BookingId,
-            //                     b.Arrivaldate,
-            //                     b.DepartureDate,
-            //                     g.GuestName,
-            //                     g.GuestSurName,
-            //                     g.GuestPhone,
-            //                     g.GuestEmail,
-            //                     b.RoomNo,
-            //                     b.Status,
-            //                     b.SumDays,
-            //                     p.DailyPersonPrice,
-            //                     p.Extrasprice,
-            //                     p.DiscountPrice,
-            //                     p.TotalPrice
-            //                 };
-            
+                  .Include(i => i.Payments).ToList();           
 
             return View(model);
         }
@@ -83,21 +59,16 @@ namespace HotelEntityWebMVCApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                Model1.Arrivaldate = DateTime.Now;
-                Model1.DepartureDate = DateTime.Now.AddDays(1);
                 Model1.SumDays = 1;
-                Model1.InsertDateTime = DateTime.Now;
-                Model1.UpdateDateTime = DateTime.Now;
-                Model2.InsertDateTime = DateTime.Now;
-                Model2.UpdateDateTime = DateTime.Now;
+                Model1.InsertDateTime = DateTime.Now;                
+                Model2.InsertDateTime = DateTime.Now;                
                 Model3.InsertDateTime = DateTime.Now;
-                Model3.InsertDateTime = DateTime.Now;
+                
 
                 db.BookingInformation.Add(Model1);
                 db.GuestInformation.Add(Model2);
                 db.Payments.Add(Model3);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                db.SaveChanges();                
             }
 
             return View("Index");
@@ -110,7 +81,11 @@ namespace HotelEntityWebMVCApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BookingInformation bookingInformation = db.BookingInformation.Find(id);
+            var bookingInformation = db.BookingInformation
+                .Include(i => i.GuestInformation)
+                .Include(i => i.Payments)
+                .FirstOrDefault(i => i.BookingId == id);
+            //BookingInformation bookingInformation = db.BookingInformation.Find(id);
             if (bookingInformation == null)
             {
                 return HttpNotFound();

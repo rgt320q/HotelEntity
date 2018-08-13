@@ -415,7 +415,7 @@
             this.tbExtrasPrice.Name = "tbExtrasPrice";
             this.tbExtrasPrice.Size = new System.Drawing.Size(104, 21);
             this.tbExtrasPrice.TabIndex = 207;
-            this.tbExtrasPrice.Text = "0.00";
+            this.tbExtrasPrice.Text = "0";
             this.tbExtrasPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbExtrasPrice.TextChanged += new System.EventHandler(this.tbExtrasPrice_TextChanged);
             // 
@@ -427,7 +427,7 @@
             this.tbDiscountPrice.Name = "tbDiscountPrice";
             this.tbDiscountPrice.Size = new System.Drawing.Size(104, 21);
             this.tbDiscountPrice.TabIndex = 208;
-            this.tbDiscountPrice.Text = "0.00";
+            this.tbDiscountPrice.Text = "0";
             this.tbDiscountPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbDiscountPrice.TextChanged += new System.EventHandler(this.tbDiscountPrice_TextChanged);
             // 
@@ -477,6 +477,7 @@
             this.bSave.TabIndex = 100005;
             this.bSave.Text = "Kaydet";
             this.bSave.UseVisualStyleBackColor = false;
+            this.bSave.Visible = false;
             this.bSave.Click += new System.EventHandler(this.bSave_Click);
             // 
             // bEdit
@@ -1577,6 +1578,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1220, 742);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.gbOdaBilgileri);

@@ -64,10 +64,10 @@
                 @item.BookingId
             </td>
             <td>
-                @item.Arrivaldate
+                @item.Arrivaldate.ToShortDateString()
             </td>
             <td>
-                @item.DepartureDate
+                @item.DepartureDate.ToShortDateString()
             </td>
 
             @foreach (var guest in item.GuestInformation)
@@ -76,7 +76,7 @@
                     @guest.GuestName
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => guest.GuestSurName)
+                    @guest.GuestSurName
                 </td>
                 <td>
                     @guest.GuestPhone
@@ -99,16 +99,16 @@
             @foreach (var payment in item.Payments)
             {
                 <td>
-                    @payment.DailyPersonPrice
+                    @payment.DailyPersonPrice.Value.ToString("C")
                 </td>
                 <td>
-                    @payment.Extrasprice
+                    @payment.Extrasprice.Value.ToString("C")
                 </td>
                 <td>
-                    @payment.DiscountPrice
+                    @payment.DiscountPrice.Value.ToString("C")
                 </td>
                 <td>
-                    @payment.TotalPrice
+                    @payment.TotalPrice.ToString("C")
                 </td>
             }
             <td>
