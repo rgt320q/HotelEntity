@@ -7,115 +7,119 @@
 
 <h2>Index</h2>
 
-<p>
+<button class="btn btn-sm">
     @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            Booking No
-        </th>
-        <th>
-            Arrivaldate
-        </th>
-        <th>
-            DepartureDate
-        </th>
-        <th>
-            Guest Name
-        </th>
-        <th>
-            Guest Surname
-        </th>
-        <th>
-            Guest Phone
-        </th>
-        <th>
-            Guest Email
-        </th>
-        <th>
-            RoomNo
-        </th>
-        <th>
-            Status
-        </th>
-        <th>
-            SumDays
-        </th>
-        <th>
-            Daily Person Price
-        </th>
-        <th>
-            Extrasprice
-        </th>
-        <th>
-            DiscountPrice
-        </th>
-        <th>
-            TotalPrice
-        </th>
-        <th></th>
-    </tr>
+</button>
+<br />
+<br />
+<div class="table-responsive-sm">
+    <table class="table table-sm table-striped table-bordered table-hover">
+        <thead class="table-dark text-sm-center">
+            <tr>
+                <th>
+                    Booking No
+                </th>
+                <th>
+                    Arrivaldate
+                </th>
+                <th>
+                    DepartureDate
+                </th>
+                <th>
+                    Guest Name
+                </th>
+                <th>
+                    Guest Surname
+                </th>
+                <th>
+                    Guest Phone
+                </th>
+                <th>
+                    Guest Email
+                </th>
+                <th>
+                    RoomNo
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    SumDays
+                </th>
+                <th>
+                    Daily Person Price
+                </th>
+                <th>
+                    Extrasprice
+                </th>
+                <th>
+                    DiscountPrice
+                </th>
+                <th>
+                    TotalPrice
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tbody class="text-center text-sm-center">
+                <tr>
+                    <td>
+                        @item.BookingId
+                    </td>
+                    <td>
+                        @item.Arrivaldate.ToShortDateString()
+                    </td>
+                    <td>
+                        @item.DepartureDate.ToShortDateString()
+                    </td>
+                    @foreach (var guest in item.GuestInformation)
+                    {
+                        <td>
+                            @guest.GuestName
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => guest.GuestSurName)
+                        </td>
+                        <td>
+                            @guest.GuestPhone
+                        </td>
+                        <td>
+                            @guest.GuestEmail
+                        </td>
+                    }
+                    <td>
+                        @item.RoomNo
+                    </td>
+                    <td>
+                        @item.Status
+                    </td>
+                    <td>
+                        @item.SumDays
+                    </td>
+                    @foreach (var payment in item.Payments)
+                    {
+                        <td>
+                            @payment.DailyPersonPrice.Value.ToString("C")
+                        </td>
+                        <td>
+                            @payment.Extrasprice.Value.ToString("C")
+                        </td>
+                        <td>
+                            @payment.DiscountPrice.Value.ToString("C")
+                        </td>
+                        <td>
+                            @payment.TotalPrice.ToString("C")
+                        </td>
+                    }
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.BookingId })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.BookingId })
+                    </td>
+                </tr>
+            </tbody>
+        }
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @item.BookingId
-            </td>
-            <td>
-                @item.Arrivaldate
-            </td>
-            <td>
-                @item.DepartureDate
-            </td>
-
-            @foreach (var guest in item.GuestInformation)
-            {
-                <td>
-                    @guest.GuestName
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => guest.GuestSurName)
-                </td>
-                <td>
-                    @guest.GuestPhone
-                </td>
-                <td>
-                    @guest.GuestEmail
-                </td>
-            }
-
-            <td>
-                @item.RoomNo
-            </td>
-            <td>
-                @item.Status
-            </td>
-            <td>
-                @item.SumDays
-            </td>
-
-            @foreach (var payment in item.Payments)
-            {
-                <td>
-                    @payment.DailyPersonPrice
-                </td>
-                <td>
-                    @payment.Extrasprice
-                </td>
-                <td>
-                    @payment.DiscountPrice
-                </td>
-                <td>
-                    @payment.TotalPrice
-                </td>
-            }
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.BookingId })
-                @Html.ActionLink("Delete", "Delete", new { id = item.BookingId })
-            </td>
-        </tr>
-    }
-
-</table>
+    </table>
+</div>

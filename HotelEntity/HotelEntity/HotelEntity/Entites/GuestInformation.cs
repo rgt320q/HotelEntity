@@ -41,9 +41,5 @@ namespace HotelEntity.Entites
         public int BookingId { get; set; }
         public virtual BookingInformation BookingInformation { get; set; }
 
-        //public override string ToString()
-        //{
-        //    return GuestName;
-        //}
     }
 }

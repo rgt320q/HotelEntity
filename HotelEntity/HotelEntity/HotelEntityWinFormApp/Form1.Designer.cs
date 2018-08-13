@@ -1577,7 +1577,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 742);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1220, 732);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.gbOdaBilgileri);
             this.Controls.Add(this.gbxPaymentsInfo);
@@ -1589,6 +1590,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbMisafirBilgileri);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
