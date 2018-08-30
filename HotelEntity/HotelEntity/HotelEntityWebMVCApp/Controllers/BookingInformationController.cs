@@ -22,31 +22,7 @@ namespace HotelEntityWebMVCApp.Controllers
         {
             var model = db.BookingInformation
                   .Include(i => i.GuestInformation)
-                  .Include(i => i.Payments).ToList();
-
-            //var model = from b in db.BookingInformation
-            //                 join g in db.GuestInformation
-            //                 on b.BookingId equals g.BookingId
-            //                 join p in db.Payments
-            //                 on b.BookingId equals p.BookingId
-            //                 select new
-            //                 {
-            //                     b.BookingId,
-            //                     b.Arrivaldate,
-            //                     b.DepartureDate,
-            //                     g.GuestName,
-            //                     g.GuestSurName,
-            //                     g.GuestPhone,
-            //                     g.GuestEmail,
-            //                     b.RoomNo,
-            //                     b.Status,
-            //                     b.SumDays,
-            //                     p.DailyPersonPrice,
-            //                     p.Extrasprice,
-            //                     p.DiscountPrice,
-            //                     p.TotalPrice
-            //                 };
-            
+                  .Include(i => i.Payments).ToList();           
 
             return View(model);
         }
@@ -110,12 +86,15 @@ namespace HotelEntityWebMVCApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BookingInformation bookingInformation = db.BookingInformation.Find(id);
-            if (bookingInformation == null)
+            var model = db.BookingInformation
+                  .Include(i => i.GuestInformation)
+                  .Include(i => i.Payments).FirstOrDefault(i=>i.BookingId==id);
+
+            if (model == null)
             {
                 return HttpNotFound();
             }
-            return View(bookingInformation);
+            return View(model);
         }
 
         // POST: BookingInformation/Edit/5
@@ -123,15 +102,29 @@ namespace HotelEntityWebMVCApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BookingId,Arrivaldate,DepartureDate,RoomNo,Status,SumDays,ChildTotal,ChildWithFeeTotal,PersonQuantity,AllPersonTotal,AccommodationType,BoardType,Breakfast,Lunch,Dinner,InsertDateTime,UpdateDateTime")] BookingInformation bookingInformation)
+        public ActionResult Edit(BookingInformation bookingInformation)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(bookingInformation).State = EntityState.Modified;
+               var bookingupdate= db.BookingInformation
+                    .Include(i=>i.GuestInformation)
+                    .Include(i=>i.Payments).Where(i=>i.BookingId==bookingInformation.BookingId)
+                    .FirstOrDefault();
+
+                bookingupdate.Arrivaldate = bookingInformation.Arrivaldate;
+                bookingupdate.DepartureDate = bookingInformation.DepartureDate;
+                bookingupdate.RoomNo = bookingInformation.RoomNo;
+                bookingupdate.Status = bookingInformation.Status;
+                bookingupdate.SumDays = bookingInformation.SumDays;
+                bookingupdate.ChildTotal = bookingInformation.ChildTotal;
+
+
+
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
-            return View(bookingInformation);
+            return View("edit");
         }
 
         // GET: BookingInformation/Delete/5

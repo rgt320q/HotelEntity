@@ -8,14 +8,8 @@ namespace HotelEntityWebMVCApp.Models
 {
     public class BookingsAllModel
     {
-        //public IEnumerable<BookingInformation> BookingInformations { get; set; }
-        //public IEnumerable<GuestInformation> GuestInformations { get; set; }
-        //public IEnumerable<Payments> Payments { get; set; }
-
-        public int RoomNo { get; set; }
-        public string GuestName { get; set; }
-        public double PaymentTotal { get; set; }
-
-
+        public ICollection<BookingInformation> BookingInformations { get; set; }
+        public ICollection<GuestInformation> GuestInformations { get; set; }
+        public ICollection<Payments> Payments { get; set; }
     }
 }

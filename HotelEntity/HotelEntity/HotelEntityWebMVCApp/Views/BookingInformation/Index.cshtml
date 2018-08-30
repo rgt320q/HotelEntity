@@ -1,5 +1,5 @@
 ﻿@using HotelEntity.Entites;
-@model List<BookingInformation>
+@model ICollection<BookingInformation>
 
 @{
     ViewBag.Title = "Index";
@@ -7,7 +7,7 @@
 
 <h2>Index</h2>
 
-<button class="btn btn-sm">
+<button class="btn bg-white btn-sm">
     @Html.ActionLink("Create New", "Create")
 </button>
 <br />
@@ -16,98 +16,98 @@
     <table class="table table-sm table-striped table-bordered table-hover">
         <thead class="table-dark text-sm-center">
             <tr>
-                <th>
-                    Booking No
+                <th class="text-sm-center px-3">
+                    <small>Booking No</small>
                 </th>
-                <th>
-                    Arrivaldate
+                <th class="px-3">
+                    <small>Arrival Date</small>
                 </th>
-                <th>
-                    DepartureDate
+                <th class="px-3">
+                    <small>Departure Date</small>
                 </th>
-                <th>
-                    Guest Name
+                <th class="px-3">
+                    <small>Guest Name</small>
                 </th>
-                <th>
-                    Guest Surname
+                <th class="px-3">
+                    <small>Guest Surname</small>
                 </th>
-                <th>
-                    Guest Phone
+                <th class="px-4">
+                    <small>Phone Number</small>
                 </th>
-                <th>
-                    Guest Email
+                <th class="px-8">
+                    <small>Email</small>
                 </th>
-                <th>
-                    RoomNo
+                <th class="px-3">
+                    <small>Room No</small>
                 </th>
-                <th>
-                    Status
+                <th class="px-3">
+                    <small>Status</small>
                 </th>
-                <th>
-                    SumDays
+                <th class="px-1">
+                    <small>Sum Days</small>
                 </th>
-                <th>
-                    Daily Person Price
+                <th class="px-3">
+                    <small>D.Person Price</small>
                 </th>
-                <th>
-                    Extrasprice
+                <th class="px-3">
+                    <small>Extras price</small>
                 </th>
-                <th>
-                    DiscountPrice
+                <th class="px-3">
+                    <small>Discount Price</small>
                 </th>
-                <th>
-                    TotalPrice
+                <th class="px-5">
+                    Total Price
                 </th>
                 <th></th>
             </tr>
         </thead>
         @foreach (var item in Model)
         {
-            <tbody class="text-center text-sm-center">
-                <tr>
+            <tbody class="text-center">
+                <tr class="text-sm-center">
                     <td>
-                        @item.BookingId
+                        <small>@item.BookingId</small>
                     </td>
                     <td>
-                        @item.Arrivaldate.ToShortDateString()
+                        <small>@item.Arrivaldate.ToShortDateString()</small>
                     </td>
                     <td>
-                        @item.DepartureDate.ToShortDateString()
+                        <small>@item.DepartureDate.ToShortDateString()</small>
                     </td>
                     @foreach (var guest in item.GuestInformation)
                     {
                         <td>
-                            @guest.GuestName
+                            <small>@guest.GuestName</small>
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => guest.GuestSurName)
+                            <small>@guest.GuestSurName</small>
                         </td>
                         <td>
-                            @guest.GuestPhone
+                            <small>@guest.GuestPhone</small>
                         </td>
                         <td>
-                            @guest.GuestEmail
+                            <small>@guest.GuestEmail</small>
                         </td>
                     }
                     <td>
-                        @item.RoomNo
+                        <small>@item.RoomNo</small>
                     </td>
                     <td>
-                        @item.Status
+                        <small>@item.Status</small>
                     </td>
                     <td>
-                        @item.SumDays
+                        <small>@item.SumDays</small>
                     </td>
                     @foreach (var payment in item.Payments)
                     {
                         <td>
-                            @payment.DailyPersonPrice.Value.ToString("C")
+                            <small>@payment.DailyPersonPrice.Value.ToString("C")</small>
                         </td>
                         <td>
-                            @payment.Extrasprice.Value.ToString("C")
+                            <small>@payment.Extrasprice.Value.ToString("C")</small>
                         </td>
                         <td>
-                            @payment.DiscountPrice.Value.ToString("C")
+                            <small>@payment.DiscountPrice.Value.ToString("C")</small>
                         </td>
                         <td>
                             @payment.TotalPrice.ToString("C")
