@@ -2,7 +2,7 @@
 @model List<BookingInformation>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Index"; 
 }
 
 <h2>Index</h2>
@@ -10,112 +10,119 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            Booking No
-        </th>
-        <th>
-            Arrivaldate
-        </th>
-        <th>
-            DepartureDate
-        </th>
-        <th>
-            Guest Name
-        </th>
-        <th>
-            Guest Surname
-        </th>
-        <th>
-            Guest Phone
-        </th>
-        <th>
-            Guest Email
-        </th>
-        <th>
-            RoomNo
-        </th>
-        <th>
-            Status
-        </th>
-        <th>
-            SumDays
-        </th>
-        <th>
-            Daily Person Price
-        </th>
-        <th>
-            Extrasprice
-        </th>
-        <th>
-            DiscountPrice
-        </th>
-        <th>
-            TotalPrice
-        </th>
-        <th></th>
-    </tr>
+<table class="table table-sm table-striped table-hover table-bordered table-responsive">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Booking No
+            </th>
+            <th>
+                Arrival Date
+            </th>
+            <th>
+                Departure Date
+            </th>
+            <th>
+                Guest Name
+            </th>
+            <th>
+                Guest Surname
+            </th>
+            <th>
+                Guest Phone
+            </th>
+            <th>
+                Guest Email
+            </th>
+            <th>
+                Room No
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Sum Days
+            </th>
+            <th>
+                Daily Person Price
+            </th>
+            <th>
+                Extras Price
+            </th>
+            <th>
+                Discount Price
+            </th>
+            <th>
+                Total Price
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @item.BookingId
-            </td>
-            <td>
-                @item.Arrivaldate.ToShortDateString()
-            </td>
-            <td>
-                @item.DepartureDate.ToShortDateString()
-            </td>
+        <tbody>
+            <tr>
+                <td>
+                    @item.BookingId
+                </td>
+                <td>
+                    @item.Arrivaldate.ToShortDateString()
+                </td>
+                <td>
+                    @item.DepartureDate.ToShortDateString()
+                </td>
 
-            @foreach (var guest in item.GuestInformation)
-            {
-                <td>
-                    @guest.GuestName
-                </td>
-                <td>
-                    @guest.GuestSurName
-                </td>
-                <td>
-                    @guest.GuestPhone
-                </td>
-                <td>
-                    @guest.GuestEmail
-                </td>
-            }
+                @foreach (var guest in item.GuestInformation)
+                {
+                    <td>
+                        @guest.GuestName
+                    </td>
+                    <td>
+                        @guest.GuestSurName
+                    </td>
+                    <td>
+                        @guest.GuestPhone
+                    </td>
+                    <td>
+                        @guest.GuestEmail
+                    </td>
+                }
 
-            <td>
-                @item.RoomNo
-            </td>
-            <td>
-                @item.Status
-            </td>
-            <td>
-                @item.SumDays
-            </td>
+                <td>
+                    @item.RoomNo
+                </td>
+                <td>
+                    @item.Status
+                </td>
+                <td>
+                    @item.SumDays
+                </td>
 
-            @foreach (var payment in item.Payments)
-            {
-                <td>
-                    @payment.DailyPersonPrice.Value.ToString("C")
-                </td>
-                <td>
-                    @payment.Extrasprice.Value.ToString("C")
-                </td>
-                <td>
-                    @payment.DiscountPrice.Value.ToString("C")
-                </td>
-                <td>
-                    @payment.TotalPrice.ToString("C")
-                </td>
-            }
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.BookingId })
-                @Html.ActionLink("Delete", "Delete", new { id = item.BookingId })
-            </td>
-        </tr>
+                @foreach (var payment in item.Payments)
+                {
+                    <td>
+                        @payment.DailyPersonPrice.Value.ToString("C")
+                    </td>
+                    <td>
+                        @payment.Extrasprice.Value.ToString("C")
+                    </td>
+                    <td>
+                        @payment.DiscountPrice.Value.ToString("C")
+                    </td>
+                    <td>
+                        @payment.TotalPrice.ToString("C")
+                    </td>
+                }
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.BookingId })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.BookingId })
+                    </td>
+            </tr>
+        </tbody>
     }
 
 </table>
