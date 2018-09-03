@@ -15,39 +15,46 @@ namespace HotelEntityWebMVCApp.Controllers
     public class BookingInformationController : Controller
     {
         private Context db = new Context();
-        //BookingInformationModel BookingInformationmodel = new BookingInformationModel();
+        private BookingsAllModel bkall = new BookingsAllModel();
 
         //GET: BookingInformation
         public ActionResult Index()
         {
             var model = db.BookingInformation
-                  .Include(i => i.GuestInformation)
-                  .Include(i => i.Payments).ToList();           
+                .Include(i => i.GuestInformation)
+                .Include(i => i.Payments);
 
-            return View(model);
+            return View(model.ToList());
         }
 
 
         // GET: BookingInformation/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            BookingInformation bookingInformation = db.BookingInformation.Find(id);
-            if (bookingInformation == null)
-            {
-                return HttpNotFound();
-            }
-            return View(bookingInformation);
-        }
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+
+        //    BookingInformation bookingInformation = db.BookingInformation.Find(id);
+        //    if (bookingInformation == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(bookingInformation);
+        //}
 
         // GET: BookingInformation/Create
         public ActionResult Create()
         {
-            var model = Tuple.Create<BookingInformation, GuestInformation, Payments>(new BookingInformation(), new GuestInformation(), new Payments());
-            return View(model);
+            //var model = Tuple.Create<BookingInformation, GuestInformation, Payments>(new BookingInformation(), new GuestInformation(), new Payments());
+            
+            
+            //var model = db.BookingInformation
+            //    .Include(i => i.GuestInformation)
+            //    .Include(i => i.Payments).ToList();
+
+            return View();
         }
 
         // POST: BookingInformation/Create
@@ -55,23 +62,30 @@ namespace HotelEntityWebMVCApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Prefix ="Item1")]BookingInformation Model1, [Bind(Prefix ="Item2")]GuestInformation Model2, [Bind(Prefix ="Item3")]Payments Model3)
+        public ActionResult Create(BookingsAllModel bookingsAll)//[Bind(Prefix ="Item1")]BookingInformation Model1, [Bind(Prefix ="Item2")]GuestInformation Model2, [Bind(Prefix ="Item3")]Payments Model3)
         {
             if (ModelState.IsValid)
-            {
-                Model1.SumDays = 1;
-                Model1.InsertDateTime = DateTime.Now;                
-                Model2.InsertDateTime = DateTime.Now;                
-                Model3.InsertDateTime = DateTime.Now;
-                
 
-                db.BookingInformation.Add(Model1);
-                db.GuestInformation.Add(Model2);
-                db.Payments.Add(Model3);
+            {
+                bookingsAll.BookingInformation.InsertDateTime = DateTime.Now;
+                //Model1.SumDays = 1;
+                //Model1.InsertDateTime = DateTime.Now;                
+                //Model2.InsertDateTime = DateTime.Now;                
+                //Model3.InsertDateTime = DateTime.Now;
+
+
+                //db.BookingInformation.Add(Model1);
+                //db.GuestInformation.Add(Model2);
+                //db.Payments.Add(Model3);
+
+                db.BookingInformation.Add(bookingsAll.BookingInformation);
+                db.GuestInformation.Add(bookingsAll.GuestInformation);
+                db.Payments.Add(bookingsAll.Payments);
+
                 db.SaveChanges();                
             }
 
-            return View("Index");
+            return Redirect("Index");
         }
 
         // GET: BookingInformation/Edit/5

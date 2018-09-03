@@ -178,17 +178,11 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BookingInformationController.cs" />
-    <Compile Include="Controllers\GuestInformationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BookingInformationModel.cs" />
     <Compile Include="Models\BookingsAllModel.cs" />
-    <Compile Include="Models\GuestInformationModel.cs" />
-    <Compile Include="Models\ModelFactory.cs" />
-    <Compile Include="Models\PaymentsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -204,19 +198,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\BookingInformation\Create.cshtml" />
     <Content Include="Views\BookingInformation\Delete.cshtml" />
-    <Content Include="Views\BookingInformation\Details.cshtml" />
     <Content Include="Views\BookingInformation\Edit.cshtml" />
     <Content Include="Views\BookingInformation\Index.cshtml" />
-    <Content Include="Views\GuestInformation\Create.cshtml" />
-    <Content Include="Views\GuestInformation\Delete.cshtml" />
-    <Content Include="Views\GuestInformation\Details.cshtml" />
-    <Content Include="Views\GuestInformation\Edit.cshtml" />
-    <Content Include="Views\GuestInformation\Index.cshtml" />
-    <Content Include="Views\Payment\Create.cshtml" />
-    <Content Include="Views\Payment\Delete.cshtml" />
-    <Content Include="Views\Payment\Details.cshtml" />
-    <Content Include="Views\Payment\Edit.cshtml" />
-    <Content Include="Views\Payment\Index.cshtml" />
     <Content Include="scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="scripts\jquery-3.3.1.min.map" />
     <None Include="Web.Debug.config">
@@ -228,6 +211,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Rezervation\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HotelEntity\HotelEntity.csproj">

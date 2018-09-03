@@ -2,7 +2,8 @@
 @model List<BookingInformation>
 
 @{
-    ViewBag.Title = "Index"; 
+
+    ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
@@ -68,10 +69,10 @@
                     @item.BookingId
                 </td>
                 <td>
-                    @item.Arrivaldate.ToShortDateString()
+                    @item.Arrivaldate
                 </td>
                 <td>
-                    @item.DepartureDate.ToShortDateString()
+                    @item.DepartureDate
                 </td>
 
                 @foreach (var guest in item.GuestInformation)
@@ -89,7 +90,6 @@
                         @guest.GuestEmail
                     </td>
                 }
-
                 <td>
                     @item.RoomNo
                 </td>
@@ -103,24 +103,24 @@
                 @foreach (var payment in item.Payments)
                 {
                     <td>
-                        @payment.DailyPersonPrice.Value.ToString("C")
+                        @payment.DailyPersonPrice
                     </td>
                     <td>
-                        @payment.Extrasprice.Value.ToString("C")
+                        @payment.Extrasprice
                     </td>
                     <td>
-                        @payment.DiscountPrice.Value.ToString("C")
+                        @payment.DiscountPrice
                     </td>
                     <td>
-                        @payment.TotalPrice.ToString("C")
+                        @payment.TotalPrice
                     </td>
                 }
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.BookingId })
-                    </td>
-                    <td>
-                        @Html.ActionLink("Delete", "Delete", new { id = item.BookingId })
-                    </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.BookingId })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BookingId })
+                </td>
             </tr>
         </tbody>
     }

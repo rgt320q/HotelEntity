@@ -37,8 +37,8 @@ namespace HotelEntity.Entites
         public DateTime? InsertDateTime { get; set; }
         public DateTime? UpdateDateTime { get; set; }
 
-        public virtual ICollection<GuestInformation> GuestInformation { get; set; }
-        public virtual ICollection<Payments> Payments { get; set; }
+        public  ICollection<GuestInformation> GuestInformation { get; set; }
+        public  ICollection<Payments> Payments { get; set; }
        
     }
 }

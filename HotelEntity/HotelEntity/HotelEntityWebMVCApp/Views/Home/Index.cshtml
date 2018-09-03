@@ -7,36 +7,36 @@
 
 <h2>Hotel Manager Index</h2>
 
-@*@foreach (var mdl in Model)
+@foreach (var item in Model)
 {   
 
-    foreach (var guests1 in mdl.GuestInformation)
+    foreach (var guests1 in item.GuestInformation)
     {
-        <div class="row mb-1">
+        <div class="row">
 
             <div class="bg-info mb-1 text-white p-2 mt-3 text-center">
                 <strong>Ad: </strong>@guests1.GuestName <strong>Soyad: </strong>@guests1.GuestSurName
-                
-                @foreach (var payments in mdl.Payments)
+                <strong>Oda Numarası: </strong>@item.RoomNo
+                <div class="bg-info mb-1 text-white p-2 mt-3 text-center">
+                    <strong>Geliş Tarihi: </strong>@item.Arrivaldate.ToString("dd-MM-yyyy") <strong>Çıkış Tarihi: </strong>@item.DepartureDate.ToString("dd-MM-yyyy") <strong>Gün Sayısı: </strong>@item.SumDays
+                </div>
+
+
+                @foreach (var payments in item.Payments)
                 {
-                    <div class="row mb-1">
+                    <div class=" mb-1">
 
                         <div class="bg-info mb-1 text-white p-2 mt-3 text-center">
-                            <strong>Fiyat: </strong>@payments.TotalPrice
+                            <strong>Fiyat: </strong>@payments.TotalPrice.ToString("C")
                         </div>
 
                     </div>
                 }
             </div>
-            <div class="bg-primary mb-1 text-white p-2 mt-3 text-center">
-                <strong>Oda Numarası: </strong>@mdl.RoomNo
-            </div>
-            <div class="bg-secondary mb-1 text-white p-2 mt-3 text-center">
-                <strong>Geliş Tarihi: </strong>@mdl.Arrivaldate.ToString("dd-MM-yyyy") <strong>Çıkış Tarihi: </strong>@mdl.DepartureDate.ToString("dd-MM-yyyy") <strong>Gün Sayısı: </strong>@mdl.SumDays
-            </div>
+           
         </div>
     }
-}*@
+}
 
 @*<table class="table table-borderless table-hover">
     <tr>
