@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+
+    Layout = null;
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -11,9 +15,9 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">               
-                @Html.ActionLink("Booking List", "Index", "BookingInformation", new { area = "" }, new { @class = "navbar-brand" })
-            </div>           
+            <div class="navbar-header">
+                @Html.ActionLink("Booking List", "List", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
         </div>
     </div>
 
@@ -22,14 +26,19 @@
             <div class="col-md-12">
                 @RenderBody()
             </div>
-        </div>        
+        </div>
         <hr />
         <footer>
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ActionLink("Back to Home", "Index")
+            </div>
             <p>&copy; @DateTime.Now - Hotel Entity Web MVC Application</p>
         </footer>
     </div>
-
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+
 </body>
 </html>
