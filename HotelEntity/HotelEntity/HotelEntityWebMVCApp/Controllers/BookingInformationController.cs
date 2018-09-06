@@ -68,6 +68,7 @@ namespace HotelEntityWebMVCApp.Controllers
 
             {
                 bookingsAll.BookingInformation.InsertDateTime = DateTime.Now;
+
                 //Model1.SumDays = 1;
                 //Model1.InsertDateTime = DateTime.Now;                
                 //Model2.InsertDateTime = DateTime.Now;                

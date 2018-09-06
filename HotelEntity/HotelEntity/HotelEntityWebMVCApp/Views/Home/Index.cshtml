@@ -4,27 +4,46 @@
 @{
     ViewData["Title"] = "Index";
 }
+<div class="navbar-header">
+    @Html.ActionLink("Booking List", "List", "Home", new { area = "" }, new { @class = "navbar-brand" })
+</div>
 
-<h2>Hotel Manager Index</h2>
+<h4>Hotel Manager Index</h4>
+
+
 <div class="row">
+
     @foreach (var item in Model)
     {
         foreach (var guests1 in item.GuestInformation)
         {
-            <div class="card bg-info p-2 mt-1 text-white  text-center">
-                <strong>Ad: </strong>@guests1.GuestName <strong>Soyad: </strong>@guests1.GuestSurName
-                <strong>Oda Numarası: </strong>@item.RoomNo
-                <div class="bg-info text-white  text-center">
-                    <strong>Geliş Tarihi: </strong>@item.Arrivaldate.ToString("dd-MM-yyyy") <strong>Çıkış Tarihi: </strong>@item.DepartureDate.ToString("dd-MM-yyyy") <strong>Gün Sayısı: </strong>@item.SumDays
-                </div>
-                @foreach (var payments in item.Payments)
-                {                   
+            foreach (var payments in item.Payments)
+            {<div class="col-lg-4 col-md-6">
+                    <div class="card mt-3 mb-3 p-1 text-center border-dark bg-dark text-white">
+
+                        <div class="card-header">
+                            <strong>No: @item.BookingId</strong> <br />
+                            <strong>@guests1.GuestName @guests1.GuestSurName</strong><br />
+                        </div>
+
+                        <div class="card-body">
+                            <strong>Oda Numarası: </strong>@item.RoomNo <br />
+                            <strong>Durum: </strong>@item.Status<br />
+                            <strong>Geliş Tarihi: </strong>@item.Arrivaldate.ToString("dd-MM-yyyy") <br />
+                            <strong>Çıkış Tarihi: </strong>@item.DepartureDate.ToString("dd-MM-yyyy") <br />
+                            <strong>Gün Sayısı: </strong>@item.SumDays <br />
+                            <strong>Kişi Sayısı: </strong>@item.AllPersonTotal <br />
+                        </div>
+
+                        <div class="card-footer">
                             <strong>Fiyat: </strong>@payments.TotalPrice.ToString("C")
-                   
-                }
-            </div>
+                        </div>
+                    </div>
+
+                </div>
+            }
         }
     }
-</div>
 
+</div>
 

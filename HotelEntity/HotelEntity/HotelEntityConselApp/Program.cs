@@ -1,5 +1,6 @@
 ﻿using HotelEntity.Entites;
 using HotelEntityWebMVCApp.Models;
+using System.Data.Entity;
 using System;
 using System.Linq;
 
@@ -11,7 +12,6 @@ namespace HotelEntityConselApp
         {
             Context _context = new Context();
             DateTime tarih = DateTime.Now;
-            BookingInformationModel bkinf = new BookingInformationModel();
 
             BookingInformation bookinginf = new BookingInformation();
 
@@ -22,28 +22,30 @@ namespace HotelEntityConselApp
             bookinginf.AllPersonTotal = 10;
 
             GuestInformation guestinf = new GuestInformation();
-            guestinf.GuestName = "Barak";
-            guestinf.GuestSurName = "Obama";
+
+            guestinf.GuestName = "Lemmy";
+            guestinf.GuestSurName = "Kilmester";
             guestinf.GuestPhone = "5312232322";
             guestinf.InsertDateTime = tarih;
             guestinf.UpdateDateTime = tarih;
             guestinf.GuestBirthDay = tarih;
 
             Payments pay = new Payments();
+
             pay.InsertDateTime = tarih;
             pay.UpdateDateTime = tarih;
             pay.DailyGuestFee = 44.58;
             pay.TotalPrice = 60.88;
-                      
+
             _context.BookingInformation.Add(bookinginf);
             _context.GuestInformation.Add(guestinf);
             _context.Payments.Add(pay);
 
             _context.SaveChanges();
 
-            Console.WriteLine("***************");
-            Console.WriteLine("Kayıt Girildi!");
-            Console.WriteLine("***************");
+            //Console.WriteLine("***************");
+            //Console.WriteLine("Kayıt Girildi!");
+            //Console.WriteLine("***************");
 
             //var bknfgd = _context.BookingInformation.Include(g => g.GuestInformation).Include(p => p.Payments);
 
@@ -103,6 +105,36 @@ namespace HotelEntityConselApp
             {
                 Console.WriteLine("Misafir Numarası={0} Misafir Adı={1} Tutar={2}", BookingsAllItem.ID, BookingsAllItem.GuestNames, BookingsAllItem.TotalFee);
             }
+
+            //var BookingsAll1  = _context.BookingInformation
+            //    .Include(i => i.GuestInformation)
+            //    .Include(i => i.Payments)
+            //    .ToList();
+
+            //int id = 0;
+            //string name = "";
+            //double price = 0;
+
+
+            //foreach (var BookingsAllItem in BookingsAll1)
+            //{
+            //    id = BookingsAllItem.BookingId;
+
+            //    foreach (var guest in BookingsAllItem.GuestInformation)
+            //    {
+            //        name = guest.GuestName;
+            //    }
+
+            //    foreach (var payment in BookingsAllItem.Payments)
+            //    {
+            //        price = payment.TotalPrice;
+            //    }
+
+            //}
+
+            //Console.WriteLine("Misafir Numarası={0} Misafir Adı={1} Tutar={2}", id, name, price);
+
+
 
 
 
