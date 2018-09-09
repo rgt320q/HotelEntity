@@ -10,7 +10,96 @@
     <title>@ViewBag.Title - Hotel Entitiy Web MVC Application</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" 
+          crossorigin="anonymous">
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .CreateButton {
+
+            text-decoration: none;
+        }
+
+        p {
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid lightgray;
+            border-right: 1px solid lightgray;
+            border-bottom: 4px solid gray;
+            border-left: 5px solid grey;
+            border-radius: 10px;
+        }
+
+        .roomno {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+
+        .card {
+
+            border: solid;
+            border-radius: 10%;
+        }
+
+        .card:hover {
+            opacity: 0.9;
+        }
+
+        #roomp {
+            width: 70px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            border-top: 1px solid lightgray;
+            border-right: 1px solid lightgray;
+            border-bottom: 4px solid gray;
+            border-left: 5px solid grey;
+            border-radius: 50%;
+        }
+
+        #header {
+            border-left: 5px solid RGB(0, 0, 0,.125);
+            border-bottom: 4px solid RGB(0, 0, 0,.125);
+            border-radius: 15px;
+        }
+
+        table {
+
+            width: 100%;
+            border-collapse: collapse;
+
+        }
+
+        table th {
+            text-align: center;
+            background-color: black;
+            color: whitesmoke;
+        }
+
+        table td {
+            text-align: center;
+        }
+
+        table tr:nth-child(even) {
+            background-color: lightgray;
+        }
+
+        table td,table th {
+
+            border: 1px solid #ddd;
+            padding: 6px;
+        }
+
+
+
+    </style>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -20,7 +109,6 @@
             </div>
         </div>
     </div>
-
     <div class="container body-content">
         <div class="row">
             <div class="col-md-12">
@@ -39,6 +127,5 @@
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-
 </body>
 </html>
