@@ -21,7 +21,7 @@ namespace HotelEntityWebMVCApp.Controllers
         {
             var model = db.BookingInformation
                 .Include(i => i.GuestInformation)
-                .Include(i => i.Payments);           
+                .Include(i => i.Payments);
 
             return View(model);
 

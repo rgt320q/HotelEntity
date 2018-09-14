@@ -4,19 +4,19 @@
 @{
     ViewBag.Title = "Create";
 }
-
-<h2>Create</h2>
-<p id="header">Home Create</p>
-
+<hr />
+<div class="mt-5">
+    <h4 class="Header-Index">Create</h4>
+</div>
+<hr />
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>BookingInformation</h4>
-        <hr />
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-       
+
         <div class="form-group">
             @Html.LabelFor(model => model.BookingInformation.Arrivaldate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -68,4 +68,3 @@
         </div>
     </div>
 }
-

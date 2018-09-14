@@ -1,10 +1,196 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.CreateButton {
+    text-decoration: none;
+}
+
+
+
+.roomno {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 150px;
+}
+
+    .roomno:hover {
+    }
+
+.card {
+    border: 50px solid black;
+    border-radius: 5%;
+    box-shadow: -5px 5px 15px 1px black;
+    transition: opacity 2s,border-radius 1s;
+   
+}
+
+    .card:hover {
+        
+        opacity: 0.9;
+        border-radius: 10%;
+    }
+
+
+.divmain {
+    background: none;
+}
+
+#roomp {
+    width: 70px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-top: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    border-radius: 50%;
+    box-shadow: -2px 2px 5px lightgray;
+    /*border-top: 1px solid lightgray;
+            border-right: 1px solid lightgray;
+            border-bottom: 4px solid gray;
+            border-left: 5px solid grey;*/
+}
+
+#roomp {
+    width: 70px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-top: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    border-radius: 50%;
+    box-shadow: -2px 2px 5px lightgray;
+    /*border-top: 1px solid lightgray;
+            border-right: 1px solid lightgray;
+            border-bottom: 4px solid gray;
+            border-left: 5px solid grey;*/
+}
+
+.list-link:hover {
+    text-decoration: none;
+}
+
+#header {
+    border-left: 5px solid RGB(0, 0, 0,.125);
+    border-bottom: 4px solid RGB(0, 0, 0,.125);
+    border-radius: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    table th {
+        text-align: left;
+        background-color: black;
+        color: whitesmoke;
+    }
+
+
+    table td {
+        text-align: left;
+    }
+
+    table tr:hover {
+        background: whitesmoke;
+    }
+
+    table tr:nth-child(even) {
+        background-color: lightgray;
+    }
+
+    table td, table th {
+        text-align: justify-all;
+        border: 1px solid #ddd;
+        padding: 6px;
+    }
+
+#navbar ul {
+    list-style: none;
+}
+
+    #navbar ul li {
+        
+        float: left;
+        padding: 15px 20px;
+    }
+
+        #navbar ul li a {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+
+#icon {
+    
+    padding: 15px 20px;
+}
+
+    #icon i {
+        color: whitesmoke
+    }
+
+#navbar-row {
+    background-color: #343a40;
+    height: 50px;
+}
+
+@media screen and (max-width: 400px) {
+    #icon {
+        display: block;
+        height: 40px;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        color: black;
+        padding-top: 15px;
+    }
+
+    #navbar ul {
+        overflow: hidden;
+        height: 0;
+    }
+
+        #navbar ul.open {
+            height: auto;
+        }
+
+        #navbar ul li {
+            float: none;
+            background: #343a40;
+        }
+            #navbar ul li:hover {
+                background: black;
+            }
+
+            #navbar ul li a {
+                color: whitesmoke;
+                padding: 5px;
+            }
+}
+.Rezervation {
+    background-color: #28a745;
+    
+}
+
+.CheckIn {
+    background-color: #dc3545;
+    
 }

@@ -4,14 +4,16 @@
 @{
     ViewData["Title"] = "Index";
 }
-<div class="navbar-header">
-    @Html.ActionLink("Booking List", "List", "Home", new { area = "" }, new { @class = "navbar-brand" })
+<hr />
+<div class="mt-5">
+    <h4 class="Header-Index">Index</h4>
 </div>
-
-<h4>Hotel Manager Index</h4>
-
-<p id="header">Home Index</p>
-
+<hr />
+<div class="m-1">
+    <a class="CreateButton btn btn-primary mb-2" href="../Home/Create">Create New</a>
+</div>
+<hr />
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 <div class="row">
 
     @foreach (var item in Model)
@@ -19,33 +21,32 @@
         foreach (var guests1 in item.GuestInformation)
         {
             foreach (var payments in item.Payments)
-            {<div class="divmain col-lg-4 col-md-6">
-                    <div class="card mt-1 mb-1 text-center border-dark bg-dark text-white">
-
-                        <div class="card-header">
-                            <strong>No: @item.BookingId</strong> <br />
-                            <strong>@guests1.GuestName @guests1.GuestSurName</strong><br />
-                            <div class="" id="roomdiv">
-                                <h6 class="p-1" id="roomp">
-                                    <strong>@item.RoomNo</strong><br />
-                                    <i class="fas fa-door-open"></i>
-                                </h6>
+            {
+                <div class="divmain col-lg-4 col-md-6">
+                    <a class="list-link" href="../Home/List">
+                        <div class="card mt-1 mb-1 text-center bg-dark text-white">
+                            <div class="card-header">
+                                <strong>No: @item.BookingId</strong> <br />
+                                <strong>@guests1.GuestName @guests1.GuestSurName</strong><br />
+                                <div id="roomdiv">
+                                    <h6 class="@item.Status p-1" id="roomp">
+                                        <strong>@item.RoomNo</strong><br />
+                                        <i class="fas fa-door-open"></i>
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <strong>Status: </strong>@item.Status<br />
+                                <strong>Arrival Date: </strong>@item.Arrivaldate.ToString("dd-MM-yyyy") <br />
+                                <strong>Departure: </strong>@item.DepartureDate.ToString("dd-MM-yyyy") <br />
+                                <strong>Total Day: </strong>@item.SumDays <br />
+                                <strong>Total Person: </strong>@item.AllPersonTotal <br />
+                            </div>
+                            <div class="card-footer">
+                                <i class="fas fa-cog fa-spin"> </i> <strong>Total Price: </strong>@payments.TotalPrice.ToString("C")
                             </div>
                         </div>
-
-                        <div class="card-body">
-                            <strong>Durum: </strong>@item.Status<br />
-                            <strong>Geliş Tarihi: </strong>@item.Arrivaldate.ToString("dd-MM-yyyy") <br />
-                            <strong>Çıkış Tarihi: </strong>@item.DepartureDate.ToString("dd-MM-yyyy") <br />
-                            <strong>Gün Sayısı: </strong>@item.SumDays <br />
-                            <strong>Kişi Sayısı: </strong>@item.AllPersonTotal <br />
-                        </div>
-
-                        <div class="card-footer">
-                            <i class="fas fa-cog fa-spin"> </i> <strong>Fiyat: </strong>@payments.TotalPrice.ToString("C")
-                        </div>
-                    </div>
-
+                    </a>
                 </div>
             }
         }
