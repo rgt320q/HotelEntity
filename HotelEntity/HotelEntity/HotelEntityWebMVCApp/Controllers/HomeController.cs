@@ -5,6 +5,7 @@ using System.Linq.Dynamic;
 using System.Linq;
 using System.Web.Mvc;
 using HotelEntityWebMVCApp.Models;
+using System;
 
 namespace HotelEntityWebMVCApp.Controllers
 {
@@ -13,70 +14,56 @@ namespace HotelEntityWebMVCApp.Controllers
 
     public class HomeController : Controller
     {
-        Context _context = Context.ContextNew();
+        Context db = Context.ContextNew();
 
         // GET: Home
         public ActionResult Index()
         {
-            //var model = _context.BookingInformation
-            //    .Include(i => i.GuestInformation)
-            //    .Include(i=>i.Payments)
-            //    .Select(i=> new
-            //    {
-            //        i.BookingId,
-            //        i.Arrivaldate,
-            //        i.DepartureDate,
-            //        i.RoomNo,
-            //        i.AllPersonTotal,
-            //        i.GuestInformation,
-            //        i.Payments
-            //    });
+            var model = db.BookingInformation
+                .Include(i => i.GuestInformation)
+                .Include(i => i.Payments);
 
-            //var model = _context.BookingInformation.Include(i => i.GuestInformation).Include(i => i.Payments).ToList();
+            return View(model);
 
-            return View(_context.BookingInformation.ToList());
+        }
 
+        public ActionResult List()
+        {
+            var model = db.BookingInformation
+                .Include(i => i.GuestInformation)
+                .Include(i => i.Payments);
+
+            return View(model.ToList());
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(BookingsAllModel bookingsAll)
+        {
+            if (ModelState.IsValid)
+
+            {
+                bookingsAll.BookingInformation.InsertDateTime = DateTime.Now;
+                bookingsAll.GuestInformation.InsertDateTime = DateTime.Now;                
+                bookingsAll.Payments.InsertDateTime = DateTime.Now;
+
+                bookingsAll.GuestInformation.GuestsequenceNo = 1;
+
+
+                db.BookingInformation.Add(bookingsAll.BookingInformation);
+                db.GuestInformation.Add(bookingsAll.GuestInformation);
+                db.Payments.Add(bookingsAll.Payments);
+
+                db.SaveChanges();
+            }
+
+            return Redirect("Index");
         }
     }
 }
 
-//var model = new BookingsAllModel();
-
-//model.BookingInformations = _context.BookingInformation.ToList();
-//model.GuestInformations = _context.GuestInformation.ToList();
-//model.Payments = _context.Payments.ToList();
-
-
-
-//var BookingVarid = 3;
-
-//var BookingsAll = _context.BookingInformation.Single(b => b.BookingId == BookingVarid);
-
-//_context.Entry(BookingsAll).Collection(g => g.GuestInformation).Load();
-//_context.Entry(BookingsAll).Collection(p => p.Payments).Load();
-
-
-//Payments payments = new Payments();
-//BookingInformation bookinginfo = new BookingInformation();
-//GuestInformation guestsinfo = new GuestInformation();
-
-
-
-
-//model.ModelBookings = _context.BookingInformation.ToList();
-//model.ModelPayments = _context.Payments.ToList();
-
-//model.GuestName = guestsinfo.GuestName;
-//model.GuestSurName = guestsinfo.GuestSurName;
-//model.GuestPhone = guestsinfo.GuestPhone;
-//model.GuestEmail = guestsinfo.GuestEmail;
-//model.GuestIdentNumber = guestsinfo.GuestIdentNumber;
-//model.GuestRezervationNote = guestsinfo.GuestRezervationNote;
-//model.GuestsequenceNo = guestsinfo.GuestsequenceNo;
-//model.GuestBirthDay = guestsinfo.GuestBirthDay;
-//model.InsertDateTime = guestsinfo.InsertDateTime;
-//model.UpdateDateTime = guestsinfo.UpdateDateTime;
-
-//ViewBag.guests = guestsinfo.GuestName;
-//ViewBag.guestsurename = guestsinfo.GuestSurName;
-//ViewBag.Paymens = _context.Payments;

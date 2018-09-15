@@ -47,6 +47,13 @@
         </div>
     </div>
     <div class="form-group">
+        @Html.LabelFor(model => model.RoomNo, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.RoomNo, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.RoomNo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
         @Html.LabelFor(model => model.GuestInformation.FirstOrDefault().GuestPhone, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.GuestInformation.FirstOrDefault().GuestPhone, new { htmlAttributes = new { @class = "form-control" } })
@@ -58,13 +65,6 @@
         <div class="col-md-10">
             @Html.EditorFor(model => model.GuestInformation.FirstOrDefault().GuestEmail, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.GuestInformation.FirstOrDefault().GuestEmail, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.RoomNo, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.RoomNo, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.RoomNo, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
@@ -116,32 +116,47 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Payments.FirstOrDefault().Extrasprice, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.AccommodationType, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Payments.FirstOrDefault().Extrasprice, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Payments.FirstOrDefault().Extrasprice, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.AccommodationType, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.AccommodationType, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Payments.FirstOrDefault().DiscountPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.BoardType, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Payments.FirstOrDefault().DiscountPrice, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Payments.FirstOrDefault().DiscountPrice, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.BoardType, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.BoardType, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Payments.FirstOrDefault().TotalPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.Breakfast, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Payments.FirstOrDefault().TotalPrice, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Payments.FirstOrDefault().TotalPrice, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Breakfast, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Breakfast, "", new { @class = "text-danger" })
         </div>
     </div>
 
+    <div class="form-group">
+        @Html.LabelFor(model => model.Lunch, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Lunch, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Lunch, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Dinner, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Dinner, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Dinner, "", new { @class = "text-danger" })
+        </div>
+    </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default btn-primary btn-lg" />
+            <input type="submit" value="Save" class="btn btn-default" />
         </div>
     </div>
 </div>

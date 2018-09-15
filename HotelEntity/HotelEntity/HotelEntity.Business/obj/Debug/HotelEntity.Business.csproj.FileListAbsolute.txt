@@ -22,3 +22,15 @@ C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Bu
 C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.csproj.CopyComplete
 C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.dll
 C:\Git.Repository\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.pdb
+D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\HotelEntity.Business.dll
+D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\HotelEntity.Business.pdb
+D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\HotelEntity.dll
+D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\EntityFramework.dll
+D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\HotelEntity.pdb
+D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\HotelEntity.dll.config
+D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\bin\Debug\EntityFramework.xml
+D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.csprojAssemblyReference.cache
+D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.csproj.CoreCompileInputs.cache
+D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.csproj.CopyComplete
+D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.dll
+D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntity.Business\obj\Debug\HotelEntity.Business.pdb

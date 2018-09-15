@@ -1,125 +1,130 @@
 ﻿@using HotelEntity.Entites;
-@model ICollection<BookingInformation>
+@model List<BookingInformation>
 
 @{
+
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
-<button class="btn bg-white btn-sm">
+<p>
     @Html.ActionLink("Create New", "Create")
-</button>
-<br />
-<br />
-<div class="table-responsive-sm">
-    <table class="table table-sm table-striped table-bordered table-hover">
-        <thead class="table-dark text-sm-center">
-            <tr>
-                <th class="text-sm-center px-3">
-                    <small>Booking No</small>
-                </th>
-                <th class="px-3">
-                    <small>Arrival Date</small>
-                </th>
-                <th class="px-3">
-                    <small>Departure Date</small>
-                </th>
-                <th class="px-3">
-                    <small>Guest Name</small>
-                </th>
-                <th class="px-3">
-                    <small>Guest Surname</small>
-                </th>
-                <th class="px-4">
-                    <small>Phone Number</small>
-                </th>
-                <th class="px-8">
-                    <small>Email</small>
-                </th>
-                <th class="px-3">
-                    <small>Room No</small>
-                </th>
-                <th class="px-3">
-                    <small>Status</small>
-                </th>
-                <th class="px-1">
-                    <small>Sum Days</small>
-                </th>
-                <th class="px-3">
-                    <small>D.Person Price</small>
-                </th>
-                <th class="px-3">
-                    <small>Extras price</small>
-                </th>
-                <th class="px-3">
-                    <small>Discount Price</small>
-                </th>
-                <th class="px-5">
-                    Total Price
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        @foreach (var item in Model)
-        {
-            <tbody class="text-center">
-                <tr class="text-sm-center">
-                    <td>
-                        <small>@item.BookingId</small>
-                    </td>
-                    <td>
-                        <small>@item.Arrivaldate.ToShortDateString()</small>
-                    </td>
-                    <td>
-                        <small>@item.DepartureDate.ToShortDateString()</small>
-                    </td>
-                    @foreach (var guest in item.GuestInformation)
-                    {
-                        <td>
-                            <small>@guest.GuestName</small>
-                        </td>
-                        <td>
-                            <small>@guest.GuestSurName</small>
-                        </td>
-                        <td>
-                            <small>@guest.GuestPhone</small>
-                        </td>
-                        <td>
-                            <small>@guest.GuestEmail</small>
-                        </td>
-                    }
-                    <td>
-                        <small>@item.RoomNo</small>
-                    </td>
-                    <td>
-                        <small>@item.Status</small>
-                    </td>
-                    <td>
-                        <small>@item.SumDays</small>
-                    </td>
-                    @foreach (var payment in item.Payments)
-                    {
-                        <td>
-                            <small>@payment.DailyPersonPrice.Value.ToString("C")</small>
-                        </td>
-                        <td>
-                            <small>@payment.Extrasprice.Value.ToString("C")</small>
-                        </td>
-                        <td>
-                            <small>@payment.DiscountPrice.Value.ToString("C")</small>
-                        </td>
-                        <td>
-                            @payment.TotalPrice.ToString("C")
-                        </td>
-                    }
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.BookingId })
-                        @Html.ActionLink("Delete", "Delete", new { id = item.BookingId })
-                    </td>
-                </tr>
-            </tbody>
-        }
+</p>
+<table class="table table-sm table-striped table-hover table-bordered table-responsive">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Booking No
+            </th>
+            <th>
+                Arrival Date
+            </th>
+            <th>
+                Departure Date
+            </th>
+            <th>
+                Guest Name
+            </th>
+            <th>
+                Guest Surname
+            </th>
+            <th>
+                Guest Phone
+            </th>
+            <th>
+                Guest Email
+            </th>
+            <th>
+                Room No
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Sum Days
+            </th>
+            <th>
+                Daily Person Price
+            </th>
+            <th>
+                Extras Price
+            </th>
+            <th>
+                Discount Price
+            </th>
+            <th>
+                Total Price
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
 
-    </table>
-</div>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @item.BookingId
+                </td>
+                <td>
+                    @item.Arrivaldate
+                </td>
+                <td>
+                    @item.DepartureDate
+                </td>
+
+                @foreach (var guest in item.GuestInformation)
+                {
+                    <td>
+                        @guest.GuestName
+                    </td>
+                    <td>
+                        @guest.GuestSurName
+                    </td>
+                    <td>
+                        @guest.GuestPhone
+                    </td>
+                    <td>
+                        @guest.GuestEmail
+                    </td>
+                }
+
+                <td>
+                    @item.RoomNo
+                </td>
+                <td>
+                    @item.Status
+                </td>
+                <td>
+                    @item.SumDays
+                </td>
+
+                @foreach (var payment in item.Payments)
+                {
+                    <td>
+                        @payment.DailyPersonPrice
+                    </td>
+                    <td>
+                        @payment.Extrasprice
+                    </td>
+                    <td>
+                        @payment.DiscountPrice
+                    </td>
+                    <td>
+                        @payment.TotalPrice
+                    </td>
+                }
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.BookingId })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BookingId })
+                </td>
+            </tr>
+        </tbody>
+    }
+
+</table>

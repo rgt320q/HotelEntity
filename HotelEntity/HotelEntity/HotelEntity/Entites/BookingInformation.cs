@@ -19,7 +19,7 @@ namespace HotelEntity.Entites
         //}
 
         [Key]
-        public int BookingId { get; set; }
+        public int BookingId { get; set; }        
         public DateTime Arrivaldate { get; set; }
         public DateTime DepartureDate { get; set; }
         public string RoomNo { get; set; }
@@ -37,8 +37,8 @@ namespace HotelEntity.Entites
         public DateTime? InsertDateTime { get; set; }
         public DateTime? UpdateDateTime { get; set; }
 
-        public virtual ICollection<GuestInformation> GuestInformation { get; set; }
-        public virtual ICollection<Payments> Payments { get; set; }
+        public  ICollection<GuestInformation> GuestInformation { get; set; }
+        public  ICollection<Payments> Payments { get; set; }
        
     }
 }

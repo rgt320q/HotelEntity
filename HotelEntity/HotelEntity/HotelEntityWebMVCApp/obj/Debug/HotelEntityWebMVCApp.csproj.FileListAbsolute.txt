@@ -208,3 +208,8 @@ D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntityWebMVCApp\obj\
 D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntityWebMVCApp\obj\Debug\HotelEntityWebMVCApp.csproj.CopyComplete
 D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntityWebMVCApp\obj\Debug\HotelEntityWebMVCApp.dll
 D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntityWebMVCApp\obj\Debug\HotelEntityWebMVCApp.pdb
+D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntityWebMVCApp\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntityWebMVCApp\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntityWebMVCApp\bin\Microsoft.AI.PerfCounterCollector.xml
+D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntityWebMVCApp\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\Git\HotelEntity\HotelEntity\HotelEntity\HotelEntity\HotelEntityWebMVCApp\bin\System.Diagnostics.DiagnosticSource.xml

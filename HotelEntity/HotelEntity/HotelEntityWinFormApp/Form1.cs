@@ -26,15 +26,7 @@ namespace HotelEntityWinFormApp
 
         public Form1()
         {
-
-
-            InitializeComponent();
-            //RenewGridviews();
-            //Bookingpayment();
-            //PersonSumTotal();
-            //cbIdentType.SelectedIndex = 0;
-            //cbAccommodationType.SelectedIndex = 0;
-            //cbBoardType.SelectedIndex = 0;
+            InitializeComponent();           
         }
 
         public void RenewGridviews()
@@ -61,6 +53,8 @@ namespace HotelEntityWinFormApp
                                  p.DiscountPrice,
                                  p.TotalPrice
                              };
+
+
 
             dgwBooking.DataSource = bookingall.ToList();
         }
@@ -337,8 +331,8 @@ namespace HotelEntityWinFormApp
                 hotelEntityProbs.DailyGuestFee = 60;
 
                 hotelEntityProbs.PersonQuantity = Convert.ToInt16(nudPersonQuantity.Value);
-                hotelEntityProbs.Extrasprice = Convert.ToDouble(tbExtrasPrice.Text);
-                hotelEntityProbs.DiscountPrice = Convert.ToDouble(tbDiscountPrice.Text);
+                hotelEntityProbs.Extrasprice = double.Parse(tbExtrasPrice.Text);
+                hotelEntityProbs.DiscountPrice = double.Parse(tbDiscountPrice.Text);
 
                 hotelEntityProbs.TotalAccommodationFee = hotelEntityProbs.PersonQuantity * hotelEntityProbs.SumDays * hotelEntityProbs.DailyGuestFee;
                 hotelEntityProbs.TotalRoomFee = hotelEntityProbs.RoomPrice * hotelEntityProbs.SumDays;
