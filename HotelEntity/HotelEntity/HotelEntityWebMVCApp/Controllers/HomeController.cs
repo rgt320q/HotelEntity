@@ -64,6 +64,19 @@ namespace HotelEntityWebMVCApp.Controllers
 
             return Redirect("Index");
         }
+
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            if (id==null)
+            {
+                return new HttpNotFoundResult();
+            }
+
+            return View();
+        }
+
+        
     }
 }
 
