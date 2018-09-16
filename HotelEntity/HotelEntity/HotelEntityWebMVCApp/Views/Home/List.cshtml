@@ -59,6 +59,12 @@
                 <th>
                     Total Price
                 </th>
+                <th>
+                   Insert Date Time
+                </th>
+                <th>
+                    Update Date Time
+                </th>
                 <th></th>
             </tr>
         </thead>
@@ -114,13 +120,18 @@
                             <td>
                                 @payment.TotalPrice.ToString("C")
                             </td>
-
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.BookingId })
-
-                                @Html.ActionLink("Delete", "Delete", new { id = item.BookingId })
-                            </td>
                         }
+                        <td>
+                            @item.InsertDateTime
+                        </td>
+                        <td>
+                            @item.UpdateDateTime
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.BookingId })
+
+                            @Html.ActionLink("Delete", "Delete", new { id = item.BookingId })
+                        </td>
                     </tr>
                 </tbody>
 

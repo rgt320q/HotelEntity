@@ -1,7 +1,264 @@
-﻿
+﻿@using HotelEntity.Entites
+@model BookingInformation
 @{
     ViewBag.Title = "Edit";
 }
+<hr />
+<div class="mt-5">
+    <h4 class="Header-Index">Edit</h4>
+</div>
+<hr />
 
-<h2>Edit</h2>
+@using (Html.BeginForm("Edit", "Home", FormMethod.Post))
+{
+    <div class="row col-12">
+        
+        <div class="col-12 text-center">
+            
+            <h6 class="text-center">No: @Model.BookingId</h6>
+            <hr />
 
+        </div>
+
+    </div>
+    
+    @Html.HiddenFor(model => model.BookingId)
+
+    <div class="row col-12" id="Update-BookingsPayments-row">
+        <div class="updateForm col-md-5 col-sm-12" id="update-guests-div">
+            @foreach (var guest in Model.GuestInformation)
+            {
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+
+                    @Html.TextBox("GuestName", @guest.GuestName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Surname</label>
+                    @Html.TextBox("GuestSurName", @guest.GuestSurName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    @Html.TextBox("GuestEmail", @guest.GuestEmail, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Phone</label>
+                    @Html.TextBox("GuestPhone", @guest.GuestPhone, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Guest Gender</label>
+                    @Html.TextBox("GuestGender", @guest.GuestGender, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Guest Rezervation Note</label>
+                    @Html.TextBox("GuestRezervationNote", @guest.GuestRezervationNote, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Guest Car Plate</label>
+                    @Html.TextBox("GuestCarPlate", @guest.GuestCarPlate, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Guest Address</label>
+                    @Html.TextBox("GuestAddress", @guest.GuestAddress, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Guest Country</label>
+                    @Html.TextBox("GuestCountry", @guest.GuestCountry, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Guest City</label>
+                    @Html.TextBox("GuestCity", @guest.GuestCity, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Guest District</label>
+                    @Html.TextBox("GuestDistrict", @guest.GuestDistrict, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Guest Birth Day</label>
+                    @Html.TextBox("GuestBirthDay", @guest.GuestBirthDay, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Guest Martial Status</label>
+                    @Html.TextBox("GuestMartialStatus", @guest.GuestMartialStatus, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Guest Ident Type</label>
+                    @Html.TextBox("GuestIdentType", @guest.GuestIdentType, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Guest Ident SerialNo</label>
+                    @Html.TextBox("GuestIdentSerialNo", @guest.GuestIdentSerialNo, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Guest Ident Number</label>
+                    @Html.TextBox("GuestIdentNumber", @guest.GuestIdentNumber, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Guest Ident Number</label>
+                    @Html.TextBox("GuestIdentNumber", @guest.GuestIdentNumber, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Guest Father Name</label>
+                    @Html.TextBox("GuestFatherName", @guest.GuestFatherName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Guest Mother Name</label>
+                    @Html.TextBox("GuestMotherName", @guest.GuestMotherName, new { @class = "form-control" })
+                </div>
+
+            }
+        </div>
+
+        <div class="updateForm col-md-5 col-sm-12" id="update-bookings-div">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Arrival Date</label>
+                @Html.TextBox("Arrivaldate", @Model.Arrivaldate.ToShortDateString(), new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Departure Date</label>
+                @Html.TextBox("DepartureDate", @Model.DepartureDate.ToShortDateString(), new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Sum Days</label>
+                @Html.TextBox("SumDays", @Model.SumDays, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Status</label>
+                @Html.TextBox("Status", @Model.Status, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">RoomNo</label>
+                @Html.TextBox("RoomNo", @Model.RoomNo, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Person Quantity</label>
+                @Html.TextBox("PersonQuantity", @Model.PersonQuantity, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Child Total</label>
+                @Html.TextBox("Child Total", @Model.ChildTotal, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Child With Fee Total</label>
+                @Html.TextBox("ChildWithFeeTotal", @Model.ChildWithFeeTotal, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">All Person Total</label>
+                @Html.TextBox("AllPersonTotal", @Model.AllPersonTotal, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">AccommodationType</label>
+                @Html.TextBox("AccommodationType", @Model.AccommodationType, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">BoardType</label>
+                @Html.TextBox("BoardType", @Model.BoardType, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Breakfast</label>
+                @Html.TextBox("Breakfast", @Model.Breakfast, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Lunch</label>
+                @Html.TextBox("Lunch", @Model.Lunch, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Dinner</label>
+                @Html.TextBox("Dinner", @Model.Dinner, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <div class="row col-12" id="Update-Payments-row">
+        <div class="updateForm col-10" id="Update-Payments-Total-div">
+            @foreach (var pay in Model.Payments)
+            {
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Total Price</label>
+                    @Html.TextBox("TotalPrice", @pay.TotalPrice, new { @class = "form-control" })
+                </div>
+            }
+        </div>
+        <div class="updateForm col-md-5 col-sm-12" id="Update-Payments-div-1">
+            @foreach (var pay in Model.Payments)
+            {
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Discount Price</label>
+                    @Html.TextBox("DiscountPrice", @pay.DiscountPrice, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Extras Price</label>
+                    @Html.TextBox("Extrasprice", @pay.Extrasprice, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Total Room Fee</label>
+                    @Html.TextBox("TotalRoomFee", @pay.TotalRoomFee, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Total Days Person Fee</label>
+                    @Html.TextBox("Totaldayspersonfee", @pay.Totaldayspersonfee, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Child Fee Total</label>
+                    @Html.TextBox("ChildFeeTotal", @pay.ChildFeeTotal, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Total Accommodation Fee</label>
+                    @Html.TextBox("TotalAccommodationFee", @pay.TotalAccommodationFee, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Total Breakfast Fee</label>
+                    @Html.TextBox("TotalBreakFastFee", @pay.TotalBreakFastFee, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Total Lunch Fee</label>
+                    @Html.TextBox("TotalLunchFee", @pay.TotalLunchFee, new { @class = "form-control" })
+                </div>
+            }
+        </div>
+
+        <div class="updateForm col-md-5 col-sm-12" id="Update-Payments-div-2">
+            @foreach (var pay in Model.Payments)
+            {
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Total Dinner Fee</label>
+                    @Html.TextBox("TotalDinnerFee", @pay.TotalDinnerFee, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Room Price</label>
+                    @Html.TextBox("RoomPrice", @pay.RoomPrice, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Daily Guest Fee</label>
+                    @Html.TextBox("DailyGuestFee", @pay.DailyGuestFee, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Daily Person Price</label>
+                    @Html.TextBox("DailyPersonPrice", @pay.DailyPersonPrice, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Child Fee</label>
+                    @Html.TextBox("ChildFee", @pay.ChildFee, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Dinner Price</label>
+                    @Html.TextBox("DinnerPrice", @pay.DinnerPrice, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Lunch Price</label>
+                    @Html.TextBox("LunchPrice", @pay.LunchPrice, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Breakfast Price</label>
+                    @Html.TextBox("BreakfastPrice", @pay.BreakfastPrice, new { @class = "form-control" })
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class=" row col-md-12 col-sm-12 form-group">
+        <div class="col-md-12 col-sm-12 text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
+}

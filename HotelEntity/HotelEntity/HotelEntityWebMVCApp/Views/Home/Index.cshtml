@@ -12,6 +12,10 @@
 <div class="m-1">
     <a class="CreateButton btn btn-primary mb-2" href="../Home/Create">Create New</a>
 </div>
+<hr/>
+<h5>Record Total: @Model.Count()</h5>
+<h6>Rezervation: @Model.Count(i=>i.Status=="Rezervation")</h6>
+<h6>CheckIn: @Model.Count(i => i.Status == "CheckIn")</h6>
 <hr />
 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 <div class="row">
@@ -23,7 +27,7 @@
             foreach (var payments in item.Payments)
             {
                 <div class="divmain col-lg-4 col-md-6">
-                    <a class="list-link" href="../Home/List">
+                    <a class="list-link" href="../Home/Edit/?id=@item.BookingId">
                         <div class="card mt-1 mb-1 text-center bg-dark text-white">
                             <div class="card-header">
                                 <strong>No: @item.BookingId</strong> <br />

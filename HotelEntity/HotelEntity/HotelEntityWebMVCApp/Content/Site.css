@@ -194,3 +194,9 @@ table {
     background-color: #dc3545;
     
 }
+
+.updateForm {
+    border: 0.1px solid black;
+    margin: 20px;
+    margin-left: 50px;
+}

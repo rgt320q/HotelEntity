@@ -13,58 +13,121 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
+<div class="form-horizontal">
 
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.BookingInformation.Arrivaldate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BookingInformation.Arrivaldate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BookingInformation.Arrivaldate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.BookingInformation.DepartureDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BookingInformation.DepartureDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BookingInformation.DepartureDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.BookingInformation.RoomNo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BookingInformation.RoomNo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BookingInformation.RoomNo, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.GuestInformation.GuestName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.GuestInformation.GuestName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.GuestInformation.GuestName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.GuestInformation.GuestSurName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.GuestInformation.GuestSurName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.GuestInformation.GuestSurName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.Payments.TotalPrice, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Payments.TotalPrice, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Payments.TotalPrice, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-success" />
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.BookingInformation.Arrivaldate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.BookingInformation.Arrivaldate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.BookingInformation.Arrivaldate, "", new { @class = "text-danger" })
         </div>
     </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.BookingInformation.DepartureDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.BookingInformation.DepartureDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.BookingInformation.DepartureDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.BookingInformation.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.BookingInformation.Status, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.BookingInformation.Status, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.BookingInformation.RoomNo, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.BookingInformation.RoomNo, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.BookingInformation.RoomNo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.GuestInformation.GuestName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.GuestInformation.GuestName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.GuestInformation.GuestName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.GuestInformation.GuestSurName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.GuestInformation.GuestSurName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.GuestInformation.GuestSurName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.GuestInformation.GuestPhone, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.GuestInformation.GuestPhone, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.GuestInformation.GuestPhone, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.GuestInformation.GuestEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.GuestInformation.GuestEmail, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.GuestInformation.GuestEmail, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.BookingInformation.PersonQuantity, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.BookingInformation.PersonQuantity, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.BookingInformation.PersonQuantity, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.BookingInformation.ChildTotal, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.BookingInformation.ChildTotal, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.BookingInformation.ChildTotal, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.BookingInformation.ChildWithFeeTotal, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.BookingInformation.ChildWithFeeTotal, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.BookingInformation.ChildWithFeeTotal, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.BookingInformation.AllPersonTotal, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.BookingInformation.AllPersonTotal, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.BookingInformation.AllPersonTotal, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.BookingInformation.AccommodationType, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.BookingInformation.AccommodationType, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.BookingInformation.AccommodationType, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.BookingInformation.BoardType, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.BookingInformation.BoardType, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.BookingInformation.BoardType, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Payments.TotalPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Payments.TotalPrice, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Payments.TotalPrice, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-success" />
+        </div>
+    </div>
+</div>
 }
