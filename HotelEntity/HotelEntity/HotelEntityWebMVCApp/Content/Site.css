@@ -66,22 +66,7 @@
             border-left: 5px solid grey;*/
 }
 
-#roomp {
-    width: 70px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    border-top: 1px solid lightgray;
-    border-right: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
-    border-left: 1px solid lightgray;
-    border-radius: 50%;
-    box-shadow: -2px 2px 5px lightgray;
-    /*border-top: 1px solid lightgray;
-            border-right: 1px solid lightgray;
-            border-bottom: 4px solid gray;
-            border-left: 5px solid grey;*/
-}
+
 
 .list-link:hover {
     text-decoration: none;
